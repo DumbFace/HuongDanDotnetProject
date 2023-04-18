@@ -1,0 +1,41 @@
+@model List<Article>
+
+<h1>List Article</h1>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID Bài Viết</th>
+            <th>Thông tin</th>
+            <th>Hình Ảnh</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model.Count > 0)
+        {
+            foreach (var item in Model)
+            {
+                <tr>
+                    <td scope="row">@item.Id</td>
+                    <td>
+                        <span class="badge badge-primary">Title: </span> @item.Title <br>
+                        <span class="badge badge-success">Description: </span> @item.Description <br>
+                    </td>
+                    <td>
+                        <img src="@item.Thumb" />
+                    </td>
+                    <td>
+                        <button class="btn primary" onclick="Edit(@item.Id)">
+                            <i class="fa fa-edit"></i>
+                        </button>
+                        <button class="btn primary" onclick="Delete(@item.Id)">
+                            <i class="fa fa-close"></i>
+                        </button>
+                    </td>
+                </tr>
+            }
+
+        }
+    </tbody>
+</table>

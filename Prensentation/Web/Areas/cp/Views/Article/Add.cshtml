@@ -1,0 +1,85 @@
+@* @using CMS.Core.Domain *@
+@model Article
+
+<h1>Add Article</h1>
+
+
+<form>
+    <input type="hidden" id="Url" name="Url" value="@Model.Url">
+    <input type="hidden" id="DateCreate" name="DateCreate" value="@Model.Url">
+    <input type="hidden" id="DatePublish" name="DatePublish" value="@Model.DatePublish">
+    <input type="hidden" id="DateModified" name="DateModified" value="@Model.DateModified">
+
+    <div class="form-group">
+        <label for="Category">Loại bài viết</label>
+        <div class="row">
+            <div class="col-sm-2">
+                <select class="form-control" name="Category" id="Category"
+                    asp-items="Html.GetEnumSelectList<CategoryEnum>()">
+                </select>
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="Title">Tiêu đề</label>
+        <input type="text" class="form-control" id="Title" name="Title" placeholder="Nhập tiêu đề">
+    </div>
+    <div class="form-group">
+        <label for="Description">Mô tả</label>
+        <input type="text" class="form-control" id="Description" name="Description" placeholder="Nhập mô tả">
+    </div>
+    <div class="form-group">
+        <label for="Description">Thumb</label>
+        <input type="text" class="form-control mb-2" id="Thumb" name="Thumb" placeholder="Nhập thumb hình">
+        <input type="button" class="btn btn-primary mb-2" id="btnCheckImage" onclick="CheckImage()" value="Xem hình">
+        <div class="d-block" id="previewImageThumb">
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="row">
+            <div class="col-sm-12">
+                <button type="button" class="btn btn-primary mb-2" data-toggle="modal" data-target="#modelId">Thêm
+                    Ảnh</button>
+            </div>
+            <div class="col-sm-12">
+                <div class="document-editor__toolbar"></div>
+                <div id="editor"></div>
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="row">
+            <div class="col-sm-2">
+                <select class="form-control" name="Status" id="Status" asp-items="Html.GetEnumSelectList<StatusCode>()">
+                </select>
+            </div>
+        </div>
+    </div>
+    <button type="button" onclick="Create(event)" class="btn btn-primary">Thêm</button>
+</form>
+
+
+<!-- Modal -->
+<div class="modal fade" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Thêm Ảnh</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="Description">Url Hình</label>
+                    <input type="text" class="form-control mb-2" id="AvatarCkeditor" name="AvatarCkeditor"
+                        placeholder="Nhập Url Hình">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" onclick="SaveImageCkEditor()">Save</button>
+            </div>
+        </div>
+    </div>
+</div>

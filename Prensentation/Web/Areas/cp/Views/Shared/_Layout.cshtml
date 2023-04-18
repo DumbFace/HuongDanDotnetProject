@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>phamphuongkhang - Trang web thực hành</title>
+    <meta name="google-site-verification" content="n7-Sc3A7Znnok_1AAeUhdBhjcStPTVQ07kGtv9v-mvE" />
+    <meta name="google-site-verification" content="2yLc0cvYrHTy2eHVWlNzLQew7Bcg5TfZ8gkMReAH-4A" />
+    <meta content="noindex" name="robots" />
+    <link rel="stylesheet" href="/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/default.css" />
+    <link rel="stylesheet" href="/css/style.cp.css">
+
+   
+
+</head>
+
+<body>
+    <div class="wrapper d-flex align-items-stretch">
+        <partial name="_cpHeader" />
+        <div id="content" class="p-4 p-md-5">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container-fluid">
+                    <button type="button" id="sidebarCollapse" class="btn btn-primary">
+                        <i class="fa fa-bars"></i>
+                        <span class="sr-only">Toggle Menu</span>
+                    </button>
+                </div>
+            </nav>
+            @RenderBody()
+        </div>
+    </div>
+
+
+    <!-- include jQuery -->
+    <script type="text/javascript" src="/js/rte.js"></script>
+    <script type="text/javascript" src='/js/all_plugins.js'></script>
+    <script src="/js/jquery.3.3.1.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/ckeditor.js"></script>
+    <script src="/js/popper.js"></script>
+    <script src="/js/main.js"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+
+</html>
