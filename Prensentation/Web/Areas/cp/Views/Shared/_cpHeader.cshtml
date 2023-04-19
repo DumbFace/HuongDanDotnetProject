@@ -1,15 +1,19 @@
+@{
+    var lstCategory = Enum.GetValues(typeof(CategoryTopic)).Cast<CategoryTopic>().ToList();
+}
+
 <nav id="sidebar" class="">
     <div class="p-4 pt-5">
         <ul class="list-unstyled components mb-5">
             <li class="active">
                 <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="true" class="dropdown-toggle">Article</a>
                 <ul class="list-unstyled collapse show" id="homeSubmenu" style="">
+                    @foreach (var item in lstCategory)
+                    {
                     <li>
-                        <a href="/cp/article/add">Add</a>
+                        <a href="/cp/topic?whichTopic=@item">@item</a>
                     </li>
-                    <li>
-                        <a href="/cp/article/getlist">List Article</a>
-                    </li>
+                    }
                 </ul>
             </li>
             <li>

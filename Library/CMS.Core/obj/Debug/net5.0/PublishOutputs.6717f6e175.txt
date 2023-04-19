@@ -1,3 +1,0 @@
-E:\Workspace\Repo\Github\SchoolProject\Library\CMS.Core\bin\Debug\net5.0\publish\CMS.Core.dll
-E:\Workspace\Repo\Github\SchoolProject\Library\CMS.Core\bin\Debug\net5.0\publish\CMS.Core.deps.json
-E:\Workspace\Repo\Github\SchoolProject\Library\CMS.Core\bin\Debug\net5.0\publish\CMS.Core.pdb

@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "E:\\Workspace\\Repo\\Github\\HuongDanDotNet\\Library\\CMS.Core\\CMS.Core.csproj": {}
+    "D:\\WorkSpace\\repo\\Github\\HuongDanDotnetProject\\HuongDanDotnetProject\\Library\\CMS.Core\\CMS.Core.csproj": {}
   },
   "projects": {
-    "E:\\Workspace\\Repo\\Github\\HuongDanDotNet\\Library\\CMS.Core\\CMS.Core.csproj": {
+    "D:\\WorkSpace\\repo\\Github\\HuongDanDotnetProject\\HuongDanDotnetProject\\Library\\CMS.Core\\CMS.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Workspace\\Repo\\Github\\HuongDanDotNet\\Library\\CMS.Core\\CMS.Core.csproj",
+        "projectUniqueName": "D:\\WorkSpace\\repo\\Github\\HuongDanDotnetProject\\HuongDanDotnetProject\\Library\\CMS.Core\\CMS.Core.csproj",
         "projectName": "CMS.Core",
-        "projectPath": "E:\\Workspace\\Repo\\Github\\HuongDanDotNet\\Library\\CMS.Core\\CMS.Core.csproj",
+        "projectPath": "D:\\WorkSpace\\repo\\Github\\HuongDanDotnetProject\\HuongDanDotnetProject\\Library\\CMS.Core\\CMS.Core.csproj",
         "packagesPath": "C:\\Users\\Khang\\.nuget\\packages\\",
-        "outputPath": "E:\\Workspace\\Repo\\Github\\HuongDanDotNet\\Library\\CMS.Core\\obj\\",
+        "outputPath": "D:\\WorkSpace\\repo\\Github\\HuongDanDotnetProject\\HuongDanDotnetProject\\Library\\CMS.Core\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
           "C:\\Users\\Khang\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

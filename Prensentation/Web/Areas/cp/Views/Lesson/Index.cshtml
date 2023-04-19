@@ -1,0 +1,31 @@
+@model Lesson
+
+<input type="hidden" id="DateCreated" name="DateCreated" value="@Model.DateCreated">
+<input type="hidden" id="DateModified" name="DateModified" value="@Model.DateModified">
+<input type="hidden" id="Id" name="Id" value="@Model.Id">
+<div class="form-group">
+    <label for="Title">Tiêu đề bài học</label>
+    <input type="text" class="form-control" id="Title" name="Title" placeholder="Nhập tiêu đề" value="@Model.Title">
+</div>
+<div class="form-group">
+    <label for="Url">Nhập Url</label>
+    <input type="text" class="form-control" id="Url" name="Url" placeholder="Nhập Url" value="@Model.Url">
+</div>
+<div class="form-group">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="document-editor__toolbar"></div>
+            <div id="editor">
+                @Html.Raw(Model.Body)
+            </div>
+        </div>
+    </div>
+</div>
+<button type="button" onclick="UpdateLesson()" class="btn btn-primary">Lưu</button>
+
+
+@section scripts{
+    <script>
+        var editor = new RichTextEditor("#editor");
+    </script>
+}

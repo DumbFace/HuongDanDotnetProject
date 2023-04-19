@@ -6120,24 +6120,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Khang\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\Khang\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\Workspace\\Repo\\Github\\HuongDanDotNet\\Library\\CMS.Data\\CMS.Data.csproj",
+      "projectUniqueName": "D:\\WorkSpace\\repo\\Github\\HuongDanDotnetProject\\HuongDanDotnetProject\\Library\\CMS.Data\\CMS.Data.csproj",
       "projectName": "CMS.Data",
-      "projectPath": "E:\\Workspace\\Repo\\Github\\HuongDanDotNet\\Library\\CMS.Data\\CMS.Data.csproj",
+      "projectPath": "D:\\WorkSpace\\repo\\Github\\HuongDanDotnetProject\\HuongDanDotnetProject\\Library\\CMS.Data\\CMS.Data.csproj",
       "packagesPath": "C:\\Users\\Khang\\.nuget\\packages\\",
-      "outputPath": "E:\\Workspace\\Repo\\Github\\HuongDanDotNet\\Library\\CMS.Data\\obj\\",
+      "outputPath": "D:\\WorkSpace\\repo\\Github\\HuongDanDotnetProject\\HuongDanDotnetProject\\Library\\CMS.Data\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
         "C:\\Users\\Khang\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -6151,8 +6146,8 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "E:\\Workspace\\Repo\\Github\\HuongDanDotNet\\Library\\CMS.Core\\CMS.Core.csproj": {
-              "projectPath": "E:\\Workspace\\Repo\\Github\\HuongDanDotNet\\Library\\CMS.Core\\CMS.Core.csproj"
+            "D:\\WorkSpace\\repo\\Github\\HuongDanDotnetProject\\HuongDanDotnetProject\\Library\\CMS.Core\\CMS.Core.csproj": {
+              "projectPath": "D:\\WorkSpace\\repo\\Github\\HuongDanDotnetProject\\HuongDanDotnetProject\\Library\\CMS.Core\\CMS.Core.csproj"
             }
           }
         }

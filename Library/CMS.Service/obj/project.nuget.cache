@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "rTusQ5xQ39wEFjn6mCpVnWbfXNRWJPByNrQg0SLi5ldi+S04EAI0BT9STwfxPt8YTF0PKAn6J2ZYUfFoouOIdQ==",
+  "dgSpecHash": "sVvNaSUHcFUKdFP1sMphVrQ+q9dlLvFgiQyagHodOlTs+RysftzVzIQ4Zd7l8oNQaDO32c7DNgxsvvKTophoTw==",
   "success": true,
-  "projectFilePath": "E:\\Workspace\\Repo\\Github\\HuongDanDotNet\\Library\\CMS.Service\\CMS.Service.csproj",
+  "projectFilePath": "D:\\WorkSpace\\repo\\Github\\HuongDanDotnetProject\\HuongDanDotnetProject\\Library\\CMS.Service\\CMS.Service.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Khang\\.nuget\\packages\\jetbrains.annotations\\2022.3.1\\jetbrains.annotations.2022.3.1.nupkg.sha512",
     "C:\\Users\\Khang\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",

@@ -16,7 +16,7 @@ namespace Web.Areas.cp.Controllers
     {
         private readonly IConfiguration config;
         private readonly ICategoryService _service;
-        private KhangDB context;
+        private HuongDanNetDB context;
         public CategoryController(ICategoryService service)
         {
             _service = service;

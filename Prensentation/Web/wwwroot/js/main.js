@@ -22,7 +22,6 @@
 }
 )(jQuery);
 
-var editor = new RichTextEditor("#editor");
 
 // function InsertHTML(data) {
 //     const viewFragment = editor.data.processor.toView(data);
@@ -132,4 +131,176 @@ function SaveImageCkEditor(e) {
     var img = '<img src="' + urlAvatar + '" />&nbsp;';
     InsertHTML(img);
     $('modal').show('hide');
+}
+
+
+function ModalSave(whichModalSave, id) {
+    var url = "";
+    var urlCallBack = "";
+
+    switch (whichModalSave) {
+        case 0:
+            url = "/cp/course/" + "add" + `?id=${id}`;
+            urlCallBack = "/cp/course/";
+            break;
+        case 1:
+            url = "/cp/lesson/" + "add" + `?id=${id}`;
+            urlCallBack = "/cp/lesson/";
+            break;
+    }
+
+    var title = $("#modelId #TitleModal").val();
+    var obj = new Object();
+    obj.Title = title;
+    console.log(obj)
+    $.ajax({
+        type: "POST",
+        url: `${url}`,
+        data: JSON.stringify(obj),
+        contentType: "application/json; charset=utf-8;",
+        success: function (data) {
+            $("#modelId").modal("hide");
+            document.location = document.location.href;
+        },
+        onerror: function (e) {
+            console.log(e);
+        }
+    })
+}
+
+
+
+function CallModal(url) {
+    var id = $("#Id").val();
+    $.ajax({
+        type: "GET",
+        url: `${url}${id}`,
+        success: function (data) {
+            $("#modelId .modal-content").html(data);
+            $("#modelId").modal("show");
+        },
+        onerror: function (e) {
+            console.log(e);
+        }
+    })
+}
+
+function UpdateTopic() {
+    var obj = new Object();
+    obj.Id = $("#Id").val();
+    obj.Url = $("#Url").val();
+    obj.DateCreated = new Date($("#DateCreated").val());
+    obj.DateModified = new Date($("#DateModified").val());
+    obj.Title = $("#Title").val();
+    obj.Description = $("#Description").val();
+    obj.Body = editor.getHTMLCode();
+    obj.Category = Number($("#Category").val());
+    console.log(obj);
+    $.ajax({
+        type: "POST",
+        url: "/cp/topic/update",
+        contentType: "application/json; charset=utf-8",
+        data: JSON.stringify(obj),
+        success: function (result) {
+            if (result == "Ok!")
+                document.location = "/cp";
+        }
+    })
+}
+
+function UpdateCourse() {
+    var obj = new Object();
+    obj.Id = $("#Id").val();
+    obj.Url = $("#Url").val();
+    obj.DateCreated = new Date($("#DateCreated").val());
+    obj.DateModified = new Date($("#DateModified").val());
+    obj.Title = $("#Title").val();
+    console.log(obj);
+    $.ajax({
+        type: "POST",
+        url: "/cp/course/update",
+        contentType: "application/json; charset=utf-8",
+        data: JSON.stringify(obj),
+        success: function (result) {
+            if (result == "OK")
+                document.location = document.location.href;
+        }
+    })
+}
+
+function UpdateLesson() {
+    var obj = new Object();
+    obj.Id = $("#Id").val();
+    obj.Url = $("#Url").val();
+    obj.DateCreated = new Date($("#DateCreated").val());
+    obj.DateModified = new Date($("#DateModified").val());
+    obj.Title = $("#Title").val();
+    obj.Body = editor.getHTMLCode();
+    console.log(obj);
+    $.ajax({
+        type: "POST",
+        url: "/cp/lesson/update",
+        contentType: "application/json; charset=utf-8",
+        data: JSON.stringify(obj),
+        success: function (result) {
+            if (result == "OK")
+                document.location = document.location.href;
+        }
+    })
+}
+
+function AddLesson(e) {
+    e.preventDefault();
+    var url = "/cp/lesson/getmodal?id=";
+    CallModal(url);
+}
+
+
+function AddCourse(e) {
+    e.preventDefault();
+    var url = "/cp/course/getmodal?id=";
+    CallModal(url);
+}
+
+function RemoveLesson(id, e) {
+    e.preventDefault();
+    $.ajax({
+        type: "GET",
+        url: `/cp/lesson/delete?id=${id}`,
+        success: function (data) {
+            if (data == "OK") {
+                document.location = document.location.href;
+            }
+        },
+        onerror: function (e) {
+            console.log(e);
+        }
+    })
+}
+
+
+function RemoveCourse(id, e) {
+    e.preventDefault();
+    $.ajax({
+        type: "GET",
+        url: `/cp/course/delete?id=${id}`,
+        success: function (data) {
+            if (data == "OK") {
+                document.location = document.location.href;
+            }
+        },
+        onerror: function (e) {
+            console.log(e);
+        }
+    })
+}
+
+
+
+function EditLesson(id) {
+    document.location = `/cp/lesson/Index?id=${id}`;
+}
+
+function EditCourse(id) {
+    document.location = `/cp/course/Index?id=${id}`;
 }

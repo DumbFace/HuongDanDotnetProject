@@ -9350,24 +9350,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Khang\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\Khang\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\Workspace\\Repo\\Github\\HuongDanDotNet\\UnitTest\\UnitTest.csproj",
+      "projectUniqueName": "D:\\WorkSpace\\repo\\Github\\HuongDanDotnetProject\\HuongDanDotnetProject\\UnitTest\\UnitTest.csproj",
       "projectName": "UnitTest",
-      "projectPath": "E:\\Workspace\\Repo\\Github\\HuongDanDotNet\\UnitTest\\UnitTest.csproj",
+      "projectPath": "D:\\WorkSpace\\repo\\Github\\HuongDanDotnetProject\\HuongDanDotnetProject\\UnitTest\\UnitTest.csproj",
       "packagesPath": "C:\\Users\\Khang\\.nuget\\packages\\",
-      "outputPath": "E:\\Workspace\\Repo\\Github\\HuongDanDotNet\\UnitTest\\obj\\",
+      "outputPath": "D:\\WorkSpace\\repo\\Github\\HuongDanDotnetProject\\HuongDanDotnetProject\\UnitTest\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
         "C:\\Users\\Khang\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -9381,17 +9376,17 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "E:\\Workspace\\Repo\\Github\\HuongDanDotNet\\Library\\CMS.Core\\CMS.Core.csproj": {
-              "projectPath": "E:\\Workspace\\Repo\\Github\\HuongDanDotNet\\Library\\CMS.Core\\CMS.Core.csproj"
+            "D:\\WorkSpace\\repo\\Github\\HuongDanDotnetProject\\HuongDanDotnetProject\\Library\\CMS.Core\\CMS.Core.csproj": {
+              "projectPath": "D:\\WorkSpace\\repo\\Github\\HuongDanDotnetProject\\HuongDanDotnetProject\\Library\\CMS.Core\\CMS.Core.csproj"
             },
-            "E:\\Workspace\\Repo\\Github\\HuongDanDotNet\\Library\\CMS.Data\\CMS.Data.csproj": {
-              "projectPath": "E:\\Workspace\\Repo\\Github\\HuongDanDotNet\\Library\\CMS.Data\\CMS.Data.csproj"
+            "D:\\WorkSpace\\repo\\Github\\HuongDanDotnetProject\\HuongDanDotnetProject\\Library\\CMS.Data\\CMS.Data.csproj": {
+              "projectPath": "D:\\WorkSpace\\repo\\Github\\HuongDanDotnetProject\\HuongDanDotnetProject\\Library\\CMS.Data\\CMS.Data.csproj"
             },
-            "E:\\Workspace\\Repo\\Github\\HuongDanDotNet\\Library\\CMS.Service\\CMS.Service.csproj": {
-              "projectPath": "E:\\Workspace\\Repo\\Github\\HuongDanDotNet\\Library\\CMS.Service\\CMS.Service.csproj"
+            "D:\\WorkSpace\\repo\\Github\\HuongDanDotnetProject\\HuongDanDotnetProject\\Library\\CMS.Service\\CMS.Service.csproj": {
+              "projectPath": "D:\\WorkSpace\\repo\\Github\\HuongDanDotnetProject\\HuongDanDotnetProject\\Library\\CMS.Service\\CMS.Service.csproj"
             },
-            "E:\\Workspace\\Repo\\Github\\HuongDanDotNet\\Prensentation\\Web.Factory\\Web.Factory.csproj": {
-              "projectPath": "E:\\Workspace\\Repo\\Github\\HuongDanDotNet\\Prensentation\\Web.Factory\\Web.Factory.csproj"
+            "D:\\WorkSpace\\repo\\Github\\HuongDanDotnetProject\\HuongDanDotnetProject\\Prensentation\\Web.Factory\\Web.Factory.csproj": {
+              "projectPath": "D:\\WorkSpace\\repo\\Github\\HuongDanDotnetProject\\HuongDanDotnetProject\\Prensentation\\Web.Factory\\Web.Factory.csproj"
             }
           }
         }

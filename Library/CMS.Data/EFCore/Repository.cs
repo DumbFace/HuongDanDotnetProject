@@ -11,17 +11,17 @@ namespace CMS.Data.EFCore
 {
     public class Repository<T> : IRepository<T> where T : class
     {
-        private KhangDB _context = null;
+        private HuongDanNetDB _context = null;
         private DbSet<T> table = null;
 
         public IQueryable<T> GetTable => table;
 
         public Repository()
         {
-            this._context = new KhangDB();
+            this._context = new HuongDanNetDB();
             table = _context.Set<T>();
         }
-        public Repository(KhangDB _context)
+        public Repository(HuongDanNetDB _context)
         {
             this._context = _context;
             table = _context.Set<T>();

@@ -1,0 +1,50 @@
+@model Course
+
+
+<h1>Course @Model.Title</h1>
+
+<form>
+    <input type="hidden" id="DateCreated" name="DateCreated" value="@Model.DateCreated">
+    <input type="hidden" id="DateModified" name="DateModified" value="@Model.DateModified">
+    <input type="hidden" id="Id" name="Id" value="@Model.Id">
+    <div class="form-group">
+        <label for="Title">Tiêu đề Khóa Học</label>
+        <input type="text" class="form-control" id="Title" name="Title" placeholder="Nhập tiêu đề" value="@Model.Title">
+    </div>
+    <div class="form-group">
+        <label for="Url">Nhập Url</label>
+        <input type="text" class="form-control" id="Url" name="Url" placeholder="Nhập Url" value="@Model.Url">
+    </div>
+    <button type="button" onclick="UpdateCourse()" class="btn btn-primary">Lưu</button>
+    <div class="form-group">
+        <div class="row row-course">
+            <h3>Lesson</h3>
+            <button class="btn btn-success" onclick="AddLesson(event)">ADD</button>
+        </div>
+    </div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Tên Bài Học</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Lessons)
+            {
+                <tr>
+                    <td scope="row">@item.Title</td>
+                    <td>
+                        <a href="" onclick="EditLesson(@item.Id,event)">
+                            <i class="fa fa-edit" ></i>
+                        </a>
+                        <a href="" onclick="RemoveLesson(@item.Id,event)">
+                            <i class="fa fa-close" ></i>
+                        </a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</form>
+@await Html.PartialAsync("_modal")

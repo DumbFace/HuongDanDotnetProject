@@ -450,11 +450,11 @@
           }
         }
       },
-      "Microsoft.AspNetCore.Mvc.Razor.Extensions/5.0.15": {
+      "Microsoft.AspNetCore.Mvc.Razor.Extensions/5.0.10": {
         "type": "package",
         "dependencies": {
-          "Microsoft.AspNetCore.Razor.Language": "5.0.15",
-          "Microsoft.CodeAnalysis.Razor": "5.0.15"
+          "Microsoft.AspNetCore.Razor.Language": "5.0.10",
+          "Microsoft.CodeAnalysis.Razor": "5.0.10"
         },
         "compile": {
           "lib/netstandard2.0/Microsoft.AspNetCore.Mvc.Razor.Extensions.dll": {}
@@ -463,11 +463,11 @@
           "lib/netstandard2.0/Microsoft.AspNetCore.Mvc.Razor.Extensions.dll": {}
         }
       },
-      "Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation/5.0.15": {
+      "Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation/5.0.10": {
         "type": "package",
         "dependencies": {
-          "Microsoft.AspNetCore.Mvc.Razor.Extensions": "5.0.15",
-          "Microsoft.CodeAnalysis.Razor": "5.0.15",
+          "Microsoft.AspNetCore.Mvc.Razor.Extensions": "5.0.10",
+          "Microsoft.CodeAnalysis.Razor": "5.0.10",
           "Microsoft.Extensions.DependencyModel": "5.0.0"
         },
         "compile": {
@@ -510,7 +510,7 @@
           }
         }
       },
-      "Microsoft.AspNetCore.Razor.Language/5.0.15": {
+      "Microsoft.AspNetCore.Razor.Language/5.0.10": {
         "type": "package",
         "compile": {
           "lib/netstandard2.0/Microsoft.AspNetCore.Razor.Language.dll": {}
@@ -714,10 +714,10 @@
           }
         }
       },
-      "Microsoft.CodeAnalysis.Razor/5.0.15": {
+      "Microsoft.CodeAnalysis.Razor/5.0.10": {
         "type": "package",
         "dependencies": {
-          "Microsoft.AspNetCore.Razor.Language": "5.0.15",
+          "Microsoft.AspNetCore.Razor.Language": "5.0.10",
           "Microsoft.CodeAnalysis.CSharp": "3.8.0",
           "Microsoft.CodeAnalysis.Common": "3.8.0"
         },
@@ -3778,24 +3778,24 @@
         "microsoft.aspnetcore.mvc.formatters.json.nuspec"
       ]
     },
-    "Microsoft.AspNetCore.Mvc.Razor.Extensions/5.0.15": {
-      "sha512": "cEZtS2dEnOS4zmHOLRxhWKDb7kkuLBhtW7WvyjVy3rgfsXsVGTEbrMUR6dBw7O37hNWkPG518LkO8A7q90vbcg==",
+    "Microsoft.AspNetCore.Mvc.Razor.Extensions/5.0.10": {
+      "sha512": "cerFq1Dyff2CuSO3XiMYwjkuP/IC5X4L+vjt20+Dq8CSLtVa84+uFcNOcwuR8/ktJg0yIF5JfGz2/TkDQC9JhA==",
       "type": "package",
-      "path": "microsoft.aspnetcore.mvc.razor.extensions/5.0.15",
+      "path": "microsoft.aspnetcore.mvc.razor.extensions/5.0.10",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Icon.png",
         "THIRD-PARTY-NOTICES.TXT",
         "lib/netstandard2.0/Microsoft.AspNetCore.Mvc.Razor.Extensions.dll",
-        "microsoft.aspnetcore.mvc.razor.extensions.5.0.15.nupkg.sha512",
+        "microsoft.aspnetcore.mvc.razor.extensions.5.0.10.nupkg.sha512",
         "microsoft.aspnetcore.mvc.razor.extensions.nuspec"
       ]
     },
-    "Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation/5.0.15": {
-      "sha512": "jAKnd/feYjtDHM/uNeJjhVNRGsCTLSHw92pzxbTPR6pZrn9C9PFIV/wwXo/jxr2QIMm7rNCimCUgyKlWRgfIiw==",
+    "Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation/5.0.10": {
+      "sha512": "dCh20wneVzFzvazH4RUd3fEiTdKEB5Kv6QKmnO/T8q/hY0FWAq64d/t9OV7+ib4Ozbnv1gtjXbp7ECydehKmcQ==",
       "type": "package",
-      "path": "microsoft.aspnetcore.mvc.razor.runtimecompilation/5.0.15",
+      "path": "microsoft.aspnetcore.mvc.razor.runtimecompilation/5.0.10",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -3805,7 +3805,7 @@
         "buildTransitive/net5.0/Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation.targets",
         "lib/net5.0/Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation.dll",
         "lib/net5.0/Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation.xml",
-        "microsoft.aspnetcore.mvc.razor.runtimecompilation.5.0.15.nupkg.sha512",
+        "microsoft.aspnetcore.mvc.razor.runtimecompilation.5.0.10.nupkg.sha512",
         "microsoft.aspnetcore.mvc.razor.runtimecompilation.nuspec"
       ]
     },
@@ -3822,17 +3822,17 @@
         "microsoft.aspnetcore.mvc.viewfeatures.nuspec"
       ]
     },
-    "Microsoft.AspNetCore.Razor.Language/5.0.15": {
-      "sha512": "7L17ra7QCeyX0XX8jDxl+qgLfyWtLM7QhpBSm8CvI8oRelDT//PfVvvSWPLz4xUYBMMszMcpVXoDuIFnutyhKw==",
+    "Microsoft.AspNetCore.Razor.Language/5.0.10": {
+      "sha512": "NyxE7aIzJ2N1qJ+Apy6olYYsoZyoI2Osai9y8AGeS5e+TLFuhqGaJpMzP38gyTmJUpszobLipmEOxXUfVx8m/Q==",
       "type": "package",
-      "path": "microsoft.aspnetcore.razor.language/5.0.15",
+      "path": "microsoft.aspnetcore.razor.language/5.0.10",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Icon.png",
         "THIRD-PARTY-NOTICES.TXT",
         "lib/netstandard2.0/Microsoft.AspNetCore.Razor.Language.dll",
-        "microsoft.aspnetcore.razor.language.5.0.15.nupkg.sha512",
+        "microsoft.aspnetcore.razor.language.5.0.10.nupkg.sha512",
         "microsoft.aspnetcore.razor.language.nuspec"
       ]
     },
@@ -4081,17 +4081,17 @@
         "microsoft.codeanalysis.csharp.nuspec"
       ]
     },
-    "Microsoft.CodeAnalysis.Razor/5.0.15": {
-      "sha512": "SXdeRxveS58p9ol09VbReyGreEBdaOr9D4GHHOstjSZkUT2DlDyWBECDmfyl4txDekNPTslM0yJ3ozY47xsSbQ==",
+    "Microsoft.CodeAnalysis.Razor/5.0.10": {
+      "sha512": "i3EyTEYcbF+ixwRJtnKaegDy/vaIm4KxN5V93DN/fMPFsZmWNDxawoIkIvSfJ6bm7BkcB+sRWj/uA0l0NiPuWA==",
       "type": "package",
-      "path": "microsoft.codeanalysis.razor/5.0.15",
+      "path": "microsoft.codeanalysis.razor/5.0.10",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Icon.png",
         "THIRD-PARTY-NOTICES.TXT",
         "lib/netstandard2.0/Microsoft.CodeAnalysis.Razor.dll",
-        "microsoft.codeanalysis.razor.5.0.15.nupkg.sha512",
+        "microsoft.codeanalysis.razor.5.0.10.nupkg.sha512",
         "microsoft.codeanalysis.razor.nuspec"
       ]
     },
@@ -9704,7 +9704,7 @@
       "CMS.Core >= 1.0.0",
       "CMS.Data >= 1.0.0",
       "CMS.Service >= 1.0.0",
-      "Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation >= 5.0.15",
+      "Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation >= 5.0.10",
       "Microsoft.EntityFrameworkCore >= 5.0.10",
       "Web.Factory >= 1.0.0",
       "X.PagedList >= 8.4.7",
@@ -9712,24 +9712,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Khang\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\Khang\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\Workspace\\Repo\\Github\\HuongDanDotNet\\Prensentation\\Web\\Web.csproj",
+      "projectUniqueName": "D:\\WorkSpace\\repo\\Github\\HuongDanDotnetProject\\HuongDanDotnetProject\\Prensentation\\Web\\Web.csproj",
       "projectName": "Web",
-      "projectPath": "E:\\Workspace\\Repo\\Github\\HuongDanDotNet\\Prensentation\\Web\\Web.csproj",
+      "projectPath": "D:\\WorkSpace\\repo\\Github\\HuongDanDotnetProject\\HuongDanDotnetProject\\Prensentation\\Web\\Web.csproj",
       "packagesPath": "C:\\Users\\Khang\\.nuget\\packages\\",
-      "outputPath": "E:\\Workspace\\Repo\\Github\\HuongDanDotNet\\Prensentation\\Web\\obj\\",
+      "outputPath": "D:\\WorkSpace\\repo\\Github\\HuongDanDotnetProject\\HuongDanDotnetProject\\Prensentation\\Web\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
         "C:\\Users\\Khang\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -9743,17 +9738,17 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "E:\\Workspace\\Repo\\Github\\HuongDanDotNet\\Library\\CMS.Core\\CMS.Core.csproj": {
-              "projectPath": "E:\\Workspace\\Repo\\Github\\HuongDanDotNet\\Library\\CMS.Core\\CMS.Core.csproj"
+            "D:\\WorkSpace\\repo\\Github\\HuongDanDotnetProject\\HuongDanDotnetProject\\Library\\CMS.Core\\CMS.Core.csproj": {
+              "projectPath": "D:\\WorkSpace\\repo\\Github\\HuongDanDotnetProject\\HuongDanDotnetProject\\Library\\CMS.Core\\CMS.Core.csproj"
             },
-            "E:\\Workspace\\Repo\\Github\\HuongDanDotNet\\Library\\CMS.Data\\CMS.Data.csproj": {
-              "projectPath": "E:\\Workspace\\Repo\\Github\\HuongDanDotNet\\Library\\CMS.Data\\CMS.Data.csproj"
+            "D:\\WorkSpace\\repo\\Github\\HuongDanDotnetProject\\HuongDanDotnetProject\\Library\\CMS.Data\\CMS.Data.csproj": {
+              "projectPath": "D:\\WorkSpace\\repo\\Github\\HuongDanDotnetProject\\HuongDanDotnetProject\\Library\\CMS.Data\\CMS.Data.csproj"
             },
-            "E:\\Workspace\\Repo\\Github\\HuongDanDotNet\\Library\\CMS.Service\\CMS.Service.csproj": {
-              "projectPath": "E:\\Workspace\\Repo\\Github\\HuongDanDotNet\\Library\\CMS.Service\\CMS.Service.csproj"
+            "D:\\WorkSpace\\repo\\Github\\HuongDanDotnetProject\\HuongDanDotnetProject\\Library\\CMS.Service\\CMS.Service.csproj": {
+              "projectPath": "D:\\WorkSpace\\repo\\Github\\HuongDanDotnetProject\\HuongDanDotnetProject\\Library\\CMS.Service\\CMS.Service.csproj"
             },
-            "E:\\Workspace\\Repo\\Github\\HuongDanDotNet\\Prensentation\\Web.Factory\\Web.Factory.csproj": {
-              "projectPath": "E:\\Workspace\\Repo\\Github\\HuongDanDotNet\\Prensentation\\Web.Factory\\Web.Factory.csproj"
+            "D:\\WorkSpace\\repo\\Github\\HuongDanDotnetProject\\HuongDanDotnetProject\\Prensentation\\Web.Factory\\Web.Factory.csproj": {
+              "projectPath": "D:\\WorkSpace\\repo\\Github\\HuongDanDotnetProject\\HuongDanDotnetProject\\Prensentation\\Web.Factory\\Web.Factory.csproj"
             }
           }
         }
@@ -9770,7 +9765,7 @@
         "dependencies": {
           "Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation": {
             "target": "Package",
-            "version": "[5.0.15, )"
+            "version": "[5.0.10, )"
           },
           "Microsoft.EntityFrameworkCore": {
             "target": "Package",

@@ -12,6 +12,7 @@ namespace CMS.Data.EFCore
     {
         IEnumerable<T> GetAll();
         T GetById(object id);
+        IQueryable<T> GetTable { get; }
         T GetEntity(Expression<Func<T, bool>> whereFunc);
         IEnumerable<TResult> GetAllFilter<TResult>(Expression<Func<T, bool>> whereFunc = null,
                        Expression<Func<T, TResult>> projection = null);

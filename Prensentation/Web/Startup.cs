@@ -13,6 +13,9 @@ using CMS.Core.Helper;
 using CMS.Service.CategoryService;
 using CMS.Service.ArticleService;
 using Web.Factory;
+using CMS.Service.TopicSerivces;
+using CMS.Service.CourseServices;
+using CMS.Service.LessonServices;
 
 namespace Web
 {
@@ -34,6 +37,11 @@ namespace Web
             services.AddSingleton<IConfiguration>(Configuration);
             services.AddScoped<ICategoryService, CategoryService>();
             services.AddScoped<IArticleService, ArticleSerivce>();
+            services.AddScoped<IContentFactory, ContentFactory>();
+            services.AddScoped<ITopicService, TopicSerivce>();
+            services.AddScoped<ICourseService, CourseService>();
+            services.AddScoped<ILessonService, LessonService>();
+
             services.AddScoped<IContentFactory, ContentFactory>();
             services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
 

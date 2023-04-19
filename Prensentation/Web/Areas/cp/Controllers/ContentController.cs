@@ -16,7 +16,7 @@ namespace Web.Areas.cp.Controllers
     {
         private readonly IConfiguration config;
         private readonly IRepository<Article> _repo;
-        private KhangDB context;
+        private HuongDanNetDB context;
         public ContentController()
         {
         }
