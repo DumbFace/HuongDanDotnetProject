@@ -48,10 +48,11 @@ h3,
 h4,
 h5,
 a,
-p {
+p,
+span {
     padding: 0;
     margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
+    /* font-family: Arial, Helvetica, sans-serif ; */
 }
 
 .content h1,
@@ -214,10 +215,6 @@ p.intro-home {
     background-color: #68c9f3;
 }
 
-h1.h1-content-lesson {
-    font-weight: 500;
-    font-size: 30px;
-}
 
 .sidenav .course {
     margin-bottom: 30px;
@@ -250,8 +247,38 @@ footer {
     margin-bottom: 30px;
 }
 
+section#content * {
+    line-height: 1.6 !important;
+}
 
+/* section#content p {
+    font-size: 18px;
+}
 
+section#content span {
+    line-height: 1.6 !important;
+    font-size: 18px !important;
+}
+
+#content h2,
+#content h3,
+#content h4 {
+    line-height: 1.6 !important;
+    font-size: 18px !important;
+    font-weight: 700;
+    color: #000;
+}
+
+#content h1 {
+    font-size: 22px !important;
+    font-weight: 700;
+    color: #000;
+}
+
+h1.h1-content-lesson {
+    font-weight: 500;
+    font-size: 30px;
+} */
 
 /* Add media queries for responsiveness - when the screen is 500px wide or less, stack the links on top of each other */
 @media screen and (max-width: 576px) {
@@ -263,9 +290,10 @@ footer {
         flex-direction: column;
     }
 
-	.row.course-item {
-		align-items: center;
-	}
+    .row.course-item {
+        align-items: center;
+    }
+
     .lesson {
         display: none;
     }

@@ -82,7 +82,7 @@ RTE_DefaultConfig.insertOrderedListItems = [["decimal", "1,2,3,4,5"], ["lower-al
 RTE_DefaultConfig.insertUnorderedListItems = [["disc", "Disc"], ["circle", "Circle"], ["square", "Square"]];
 
 RTE_DefaultConfig.fontSizeItems = "8,9,10,11,12,13,14,16,18,24,36,48,60,72,96";// A predefined set of font sizes.
-RTE_DefaultConfig.fontNameItems = "Arial,Arial Black,Comic Sans MS,Courier New,Tahoma,Georgia,Helvetica, Segoe UI,Sans-Serif,Impact,Times New Roman,Verdana";// A predefined set of font names.
+RTE_DefaultConfig.fontNameItems = "Arial,Arial Black,Comic Sans MS,Courier New,Tahoma,Georgia,Helvetica, Segoe UI,Sans-Serif,Impact,Verdana";// A predefined set of font names.
 RTE_DefaultConfig.lineHeightItems = "100%,150%,200%,250%,300%,350%,400%,450%,500%,600%"// A predefined set of line height items.
 // all text name shall be lower case
 

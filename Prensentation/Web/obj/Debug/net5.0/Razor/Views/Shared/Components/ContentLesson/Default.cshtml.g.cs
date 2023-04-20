@@ -40,8 +40,29 @@ using Web.Models;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 5 "D:\WorkSpace\repo\Github\HuongDanDotnetProject\HuongDanDotnetProject\Prensentation\Web\Views\_ViewImports.cshtml"
+using CMS.Core.Domain.Lessons;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 6 "D:\WorkSpace\repo\Github\HuongDanDotnetProject\HuongDanDotnetProject\Prensentation\Web\Views\_ViewImports.cshtml"
+using CMS.Core.Domain.Topics;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 7 "D:\WorkSpace\repo\Github\HuongDanDotnetProject\HuongDanDotnetProject\Prensentation\Web\Views\_ViewImports.cshtml"
+using CMS.Core.Domain.Courses;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"075e603057e184b6256c8800eb5dee018a8b1a18", @"/Views/Shared/Components/ContentLesson/Default.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"484e90947bd39645268e34b584097a365c8205b7", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"63f768584d25bf9ae53b153c2d44d45a78b0171a", @"/Views/_ViewImports.cshtml")]
     #nullable restore
     public class Views_Shared_Components_ContentLesson_Default : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     #nullable disable

@@ -297,10 +297,13 @@ function RemoveCourse(id, e) {
 
 
 
-function EditLesson(id) {
-    document.location = `/cp/lesson/Index?id=${id}`;
+function EditLesson(id,e) {
+    e.preventDefault();
+    window.location.href = `/cp/lesson/Index?id=${id}`;
 }
 
-function EditCourse(id) {
-    document.location = `/cp/course/Index?id=${id}`;
+function EditCourse(id,e) {
+    e.preventDefault();
+    window.location.href = `/cp/course/Index?id=${id}`;
+
 }

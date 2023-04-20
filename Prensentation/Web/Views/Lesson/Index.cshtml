@@ -1,3 +1,5 @@
+@model Lesson
+
 <div class="container default-background-color m-b-30">
     <div class="row">
         <div class="col-sm-4">
@@ -5,12 +7,9 @@
         </div>
         <div class="col-sm-8">
             <section class="content content-course default-padding" id="content">
-                <h1 class="h1-content-lesson">Introduction to C#</h1>
+                <h1 class="h1-content-lesson">@Model.Title</h1>
                 <p>Quay lại: <a href="#">Hướng Dẫn .NET C# cho người mới bắt đầu </a></p>
-
-                <h2>
-                    .NET Framework là gì ?
-                </h2>
+                @Html.Raw(Model.Body)
             </section>
 
             <div class="nav-content default-padding">

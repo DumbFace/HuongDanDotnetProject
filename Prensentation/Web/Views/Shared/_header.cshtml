@@ -1,11 +1,18 @@
+@{
+	var lstCategory = Enum.GetValues(typeof(CategoryTopic)).Cast<CategoryTopic>().ToList();
+}
+
 <header>
 	<div class="header">
 		<div class="container nav-desktop default-padding-x">
 			<a href="/" class="logo">Trang Chủ</a>
 			<div class="header-right">
-				<a class="link" href="/khoa-hoc/c-sharp">C#</a>
-				<a class="link" href="/khoa-hoc/mvc">MVC</a>
-				<a class="link" href="/khoa-hoc/web-api">Web API</a>
+				@foreach (var item in lstCategory)
+				{
+					<a class="link" href="/khoa-hoc/@item">@item</a>
+				}
+				@* <a class="link" href="/khoa-hoc/MVC">MVC</a>
+				<a class="link" href="/khoa-hoc/web-api">Web API</a> *@
 			</div>
 		</div>
 	</div>
