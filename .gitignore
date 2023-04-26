@@ -1,0 +1,13 @@
+
+Library/CMS.Core/obj
+Library/CMS.Core/bin
+Library/CMS.Data/obj
+Library/CMS.Data/bin
+Library/CMS.Service/obj
+Library/CMS.Service/bin
+Prensentation/Web/obj
+Prensentation/Web/bin
+Prensentation/Web.Factory/obj
+Prensentation/Web.Factory/bin
+UnitTest/obj
+UnitTest/bin
