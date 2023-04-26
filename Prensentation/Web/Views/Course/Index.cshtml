@@ -1,19 +1,29 @@
-@model Topic
+@model TopicViewModel
 
-<div class="container default-background-color m-b-30">
-    <div class="row">
-        <div class="col-sm-4">
-            @await Component.InvokeAsync("SideBar",ViewBag.TopicCategory)
-        </div>
-        <div class="col-sm-8">
-            <section class="content content-course default-padding" id="content">
-                <h1 class="h1-content-course">
-                    @Model.Title
-                </h1>
-                <div class="wrap">
-                    @Html.Raw(Model.Body)                    
-                </div>
-            </section>
+
+@if (Model != null)
+{
+    <div class="container default-background-color m-b-30">
+        <div class="row">
+            <div class="col-sm-4">
+                @await Component.InvokeAsync("SideBar",ViewBag.TopicCategory)
+            </div>
+            <div class="col-sm-8">
+                <section class="content content-course default-padding" id="content">
+                    <h1 class="h1-content-course">
+                        @Model.Title
+                    </h1>
+                    <div class="wrap">
+                        @Html.Raw(Model.Body)
+                    </div>
+                </section>
+            </div>
         </div>
     </div>
-</div>
+}
+else
+{
+    <div class="container no-content">
+        <h1>Chúng tôi đang cập nhật khóa học, bạn vui lòng trở lại sau.</h1>
+    </div>
+}

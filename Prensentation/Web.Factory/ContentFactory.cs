@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
-using CMS.Core.Domain;
+// using CMS.Core.Domain;
+using CMS.Core.Domain.Lessons;
+using CMS.Core.Domain.Topics;
 using CMS.Data.EFCore;
 using LinqKit;
 using X.PagedList;
@@ -12,71 +14,68 @@ namespace Web.Factory
 {
     public class ContentFactory : IContentFactory
     {
-        private readonly IRepository<Article> _repoArticle;
-        private readonly IRepository<Category> _repoCategory;
-        public ContentFactory(
-            IRepository<Article> repoArticle,
-            IRepository<Category> repoCategory
+        private readonly IRepository<Topic> _repoTopic;
+        private readonly IRepository<Lesson> _repoLesson;
 
+
+        public ContentFactory(
+            IRepository<Topic> repoTopic,
+            IRepository<Lesson> repoLesson
         )
         {
-            _repoArticle = repoArticle;
-            _repoCategory = repoCategory;
+            _repoLesson = repoLesson;
+            _repoTopic = repoTopic;
         }
-        Expression<Func<Article, ArticleViewModel>> projection = s => new ArticleViewModel()
-        {
-            Id = s.Id,
-            Title = s.Title,
-            Description = s.Description,
-            Thumb = s.Thumb,
-            Url = s.Url,
-            DatePublish = s.DatePublish,
-            Category = s.Category,
-            Status = s.Status
-        };
 
-        Func<Article, ArticleViewModel> projectionFunc = s => new ArticleViewModel()
+
+        Expression<Func<Topic, TopicViewModel>> projectionTopic = s => new TopicViewModel()
         {
-            Id = s.Id,
             Title = s.Title,
-            Description = s.Description,
-            Thumb = s.Thumb,
+            Body = s.Body,
             Url = s.Url,
-            DatePublish = s.DatePublish,
-            Category = s.Category,
+            Description = s.Description,
+            Courses = s.Courses,
+            Category = s.Category
+        };
+        Expression<Func<Lesson, LessonViewModel>> projectionLesson = s => new LessonViewModel()
+        {
+            Title = s.Title,
+            Body = s.Body,
+            Url = s.Url,
+            Description = s.Description,
             Status = s.Status,
-            Content = s.Content
+            IsDelete = s.IsDelete,
+            Course = s.Course,
+            Order = s.Order
         };
 
-        public ArticleViewModel GetArticleById(int id)
+        public TopicViewModel GetTopic(CategoryTopic? categoryTopic = null)
         {
-            return projectionFunc(_repoArticle.GetById(id));
+            var predicate = PredicateBuilder.New<Topic>(true);
+            if (categoryTopic != null)
+            {
+                predicate = predicate.And(p => p.Category == categoryTopic);
+            }
+            return _repoTopic.GetAllFilter(predicate, projectionTopic).FirstOrDefault();
         }
-        public IPagedList<ArticleViewModel> GetArticlesPaging(CategoryEnum? type = null, int page = 1, int pagesize = 10)
+
+        public LessonViewModel GetLesson(string url = "")
         {
-            var predicate = PredicateBuilder.New<Article>(true);
+            var predicate = PredicateBuilder.New<Lesson>(true);
             predicate = predicate.And(p => p.Status == StatusCode.Public);
             predicate = predicate.And(p => p.IsDelete == false);
-            if (type != null)
+
+            if (url != "")
             {
-                predicate = predicate.And(p => p.Category == type);
+                predicate = predicate.And(p => p.Url == url);
             }
-            return _repoArticle.Paging<ArticleViewModel>(predicate, projection, page, pagesize);
+
+            return _repoLesson.GetAllFilter(predicate, projectionLesson).FirstOrDefault();
         }
 
-        public IEnumerable<ArticleViewModel> GetSiteMap()
+        public IEnumerable<CMS.Core.Domain.ArticleViewModel> GetSiteMap()
         {
-            return (
-                from article in _repoArticle.GetAll()
-                where article.Status == StatusCode.Public && article.IsDelete == false
-                orderby article.DatePublish descending
-                select new ArticleViewModel
-                {
-                    Id = article.Id,
-                    Url = article.Url,
-                    DatePublish = article.DatePublish
-                }
-             );
+            throw new NotImplementedException();
         }
     }
 }

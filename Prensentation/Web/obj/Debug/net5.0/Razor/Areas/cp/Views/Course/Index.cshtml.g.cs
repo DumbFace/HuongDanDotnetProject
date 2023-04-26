@@ -13,42 +13,35 @@ namespace AspNetCore
     using Microsoft.AspNetCore.Mvc.Rendering;
     using Microsoft.AspNetCore.Mvc.ViewFeatures;
 #nullable restore
-#line 2 "D:\WorkSpace\repo\Github\HuongDanDotnetProject\HuongDanDotnetProject\Prensentation\Web\Areas\cp\Views\_ViewImports.cshtml"
-using CMS.Core.Domain;
+#line 1 "D:\WorkSpace\repo\Github\HuongDanDotnetProject\HuongDanDotnetProject\Prensentation\Web\Areas\cp\Views\_ViewImports.cshtml"
+using Web.Models;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 3 "D:\WorkSpace\repo\Github\HuongDanDotnetProject\HuongDanDotnetProject\Prensentation\Web\Areas\cp\Views\_ViewImports.cshtml"
+#line 2 "D:\WorkSpace\repo\Github\HuongDanDotnetProject\HuongDanDotnetProject\Prensentation\Web\Areas\cp\Views\_ViewImports.cshtml"
 using CMS.Core.Domain.Topics;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 4 "D:\WorkSpace\repo\Github\HuongDanDotnetProject\HuongDanDotnetProject\Prensentation\Web\Areas\cp\Views\_ViewImports.cshtml"
+#line 3 "D:\WorkSpace\repo\Github\HuongDanDotnetProject\HuongDanDotnetProject\Prensentation\Web\Areas\cp\Views\_ViewImports.cshtml"
 using CMS.Core.Domain.Courses;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 5 "D:\WorkSpace\repo\Github\HuongDanDotnetProject\HuongDanDotnetProject\Prensentation\Web\Areas\cp\Views\_ViewImports.cshtml"
+#line 4 "D:\WorkSpace\repo\Github\HuongDanDotnetProject\HuongDanDotnetProject\Prensentation\Web\Areas\cp\Views\_ViewImports.cshtml"
 using CMS.Core.Domain.Lessons;
 
 #line default
 #line hidden
 #nullable disable
-#nullable restore
-#line 7 "D:\WorkSpace\repo\Github\HuongDanDotnetProject\HuongDanDotnetProject\Prensentation\Web\Areas\cp\Views\_ViewImports.cshtml"
-using Web.Models;
-
-#line default
-#line hidden
-#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"851a3d34e47313f05fe904da9749cc110b1c1ff8", @"/Areas/cp/Views/Course/Index.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"dcb80669e177a5b0f49726d4769cc7d0824f1583", @"/Areas/cp/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"1568c7da2d3ecc61d103592aba3b11680cba5e6e", @"/Areas/cp/Views/_ViewImports.cshtml")]
     #nullable restore
     public class Areas_cp_Views_Course_Index : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<Course>
     #nullable disable
@@ -87,7 +80,7 @@ using Web.Models;
 #line hidden
 #nullable disable
             WriteLiteral("</h1>\r\n\r\n");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "851a3d34e47313f05fe904da9749cc110b1c1ff84424", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "851a3d34e47313f05fe904da9749cc110b1c1ff84198", async() => {
                 WriteLiteral("\r\n    <input type=\"hidden\" id=\"DateCreated\" name=\"DateCreated\"");
                 BeginWriteAttribute("value", " value=\"", 119, "\"", 145, 1);
 #nullable restore

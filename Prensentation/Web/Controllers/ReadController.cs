@@ -15,39 +15,39 @@ namespace Web.Controllers
 {
     public class ReadController : Controller
     {
-        private readonly ILogger<ReadController> _logger;
+        // private readonly ILogger<ReadController> _logger;
 
-        private readonly IContentFactory _service;
+        // private readonly IContentFactory _service;
 
-        public ReadController(IContentFactory service)
-        {
-            _service = service;
-        }
+        // public ReadController(IContentFactory service)
+        // {
+        //     _service = service;
+        // }
 
-        [Route("{url}-{id}.html")]
-        public IActionResult Index(string url, int id)
-        {
-            ArticleViewModel article = _service.GetArticleById(id);
-            ViewBag.FriendlyUrl = article.FriendLyUrl;
-            ViewBag.Thumb = article.Thumb;
-            ViewBag.Title = article.Title;
-            ViewBag.Description = article.Description;
-            ViewBag.DatePublish = article.DatePublish;
-            ViewBag.DateModified = article.DateModified;
-            ViewBag.Reading = 1;
+        // [Route("{url}-{id}.html")]
+        // public IActionResult Index(string url, int id)
+        // {
+        //     ArticleViewModel article = _service.GetArticleById(id);
+        //     ViewBag.FriendlyUrl = article.FriendLyUrl;
+        //     ViewBag.Thumb = article.Thumb;
+        //     ViewBag.Title = article.Title;
+        //     ViewBag.Description = article.Description;
+        //     ViewBag.DatePublish = article.DatePublish;
+        //     ViewBag.DateModified = article.DateModified;
+        //     ViewBag.Reading = 1;
 
-            return View(article);
-        }
+        //     return View(article);
+        // }
 
-        public IActionResult Privacy()
-        {
-            return View();
-        }
+        // public IActionResult Privacy()
+        // {
+        //     return View();
+        // }
 
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
-        {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
-        }
+        // [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
+        // public IActionResult Error()
+        // {
+        //     return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        // }
     }
 }

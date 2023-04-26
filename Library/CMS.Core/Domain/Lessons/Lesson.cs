@@ -22,5 +22,16 @@ namespace CMS.Core.Domain.Lessons
         public DateTime DateModified { get; set; }
         public Course Course { get; set; }
         public int Order { get; set; }
+        public StatusCode Status { get; set; }
+        public bool IsDelete { get; set; }
+
+    }
+
+    public enum StatusCode
+    {
+        [Display(Name = "Chỉ tôi xem")]
+        Pending,
+        [Display(Name = "Xuất bản")]
+        Public,
     }
 }

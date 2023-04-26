@@ -2,12 +2,12 @@
 <html lang="en">
 
 @{
-    string Title = ViewBag.Title != null ? ViewBag.Title : "Blog Thủ Thuật | Chia sẽ các thủ thuật về công nghệ";
-    string Description = ViewBag.Description != null ? ViewBag.Description : "Blog Thủ Thuật | Chia sẽ các thủ thuật về công nghệ";
-    string Url = ViewBag.Url != null ? ViewBag.Url : "https://phamphuongkhang.xyz";
+    string Title = ViewBag.Title != null ? ViewBag.Title : "Hướng Dẫn Lập Trình Net";
+    string Description = ViewBag.Description != null ? ViewBag.Description : "Hướng Dẫn Lập Trinh Net";
+    string Url = ViewBag.Url != null ? ViewBag.Url : "https://huongdanlaptrinhnet.vn";
 }
 <head>
-    <link rel="icon" href="https://phamphuongkhang.xyz/images/logo.png" type="image/icon type">
+    <link rel="icon" href="/favicon.ico" type="image/icon type">
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>
@@ -17,13 +17,13 @@
         content="@Html.Raw(Description)">
     <meta name="google-site-verification" content="n7-Sc3A7Znnok_1AAeUhdBhjcStPTVQ07kGtv9v-mvE" />
     <meta name="google-site-verification" content="2yLc0cvYrHTy2eHVWlNzLQew7Bcg5TfZ8gkMReAH-4A" />
-    <link rel="canonical" href="https://phamphuongkhang.xyz/" />
+    <link rel="canonical" href="https://huongdanlaptrinhnet.vn/" />
     <meta content="index,follow" name="robots" />
     <meta property="og:title" content="@Html.Raw(Title)" />
     <meta property="og:description" content="@Html.Raw(Description)" />
     <meta property="og:url" content="@Html.Raw(Url)" />
     <meta property="og:type" content="article" />
-    <meta property="og:image" content="https://phamphuongkhang.xyz/images/logo.png" />
+    <meta property="og:image" content="https://huongdanlaptrinhnet.vn/images/logo.png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="628" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -38,17 +38,15 @@
         gtag('config', 'G-R51RZ8YNQH');
     </script>
 
-
-
      @if (ViewBag.Reading != 1)
     {
     <script type="application/ld+json">
         {
         "@@context": "https://schema.org",
         "@@type"   : "Organization",
-        "name"     :"Blog Thủ Thuật | Chia sẽ các thủ thuật về công nghệ",
-        "url"      : "https://phamphuongkhang.xyz/",
-        "logo"     : "https://phamphuongkhang.xyz/images/logo.png",
+        "name"     :"Hướng Dẫn Lập Trình NET",
+        "url"      : "https://huongdanlaptrinhnet.vn/",
+        "logo"     : "https://huongdanlaptrinhnet.vn/images/logo.png",
         "contactPoint": [
         {
         "@@type": "ContactPoint",
@@ -63,7 +61,7 @@
         "addressLocality":"Hồ Chí Minh City",
         "addressCountry": "Việt Nam",
         "postalCode":"72209",
-        "email":"gv.runfast@gmail.com"
+        "email":"huongdandotnet@gmail.com"
         }
         ]
         }

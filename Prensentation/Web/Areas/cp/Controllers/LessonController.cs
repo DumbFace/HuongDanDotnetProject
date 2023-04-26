@@ -77,6 +77,8 @@ namespace Web.Areas.cp.Controllers
             lesson.Order = obj.Order;
             lesson.Body = obj.Body;
             lesson.Url = obj.Url;
+            lesson.Order = obj.Order;
+            lesson.Status = obj.Status;
             // _lessonService.Update(obj);
             _lessonService.Save();
             return Ok("OK");

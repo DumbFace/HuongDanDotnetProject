@@ -10,6 +10,7 @@ using CMS.Service.LessonServices;
 using CMS.Service.TopicSerivces;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using Web.Factory;
 
 namespace Web.Controllers
 {
@@ -19,17 +20,21 @@ namespace Web.Controllers
         private readonly ITopicService _toppicService;
         private readonly ICourseService _courseService;
         private readonly ILessonService _lessonService;
+        private readonly IContentFactory _contentFactory;
+
         private readonly ILogger<CategoryController> _logger;
 
         public CourseController(ILogger<CategoryController> logger,
             ITopicService topicService,
             ICourseService courseService,
-            ILessonService lessonService
+            ILessonService lessonService,
+            IContentFactory contentFactory
         )
         {
             _toppicService = topicService;
             _courseService = courseService;
             _lessonService = lessonService;
+            _contentFactory = contentFactory;
             _logger = logger;
         }
 
@@ -37,7 +42,7 @@ namespace Web.Controllers
         public IActionResult Index(CategoryTopic topicCategory)
         {
             ViewBag.TopicCategory = topicCategory;
-            var topic = _toppicService.GetEntity(s => s.Category == topicCategory);
+            var topic = _contentFactory.GetTopic(topicCategory);
             return View(topic);
         }
 

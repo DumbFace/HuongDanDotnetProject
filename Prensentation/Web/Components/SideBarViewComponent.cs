@@ -26,7 +26,7 @@ namespace Web.ViewComponents
 
         public async Task<IViewComponentResult> InvokeAsync(CategoryTopic categoryTopic)
         {
-            Topic topic = _topicService.GetEntity(s => s.Category == categoryTopic);
+            var topic = _content.GetTopic(categoryTopic);
             IEnumerable<Course> courses = topic == null ? null : topic.Courses;
             // switch (categoryTopic)
             // {
@@ -38,7 +38,6 @@ namespace Web.ViewComponents
             //         break;
             //     case CategoryTopic.WebAPI:
             //         break;
-
             // }
             return View(courses);
         }

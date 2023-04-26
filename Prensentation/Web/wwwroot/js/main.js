@@ -193,8 +193,10 @@ function UpdateTopic() {
     obj.DateModified = new Date($("#DateModified").val());
     obj.Title = $("#Title").val();
     obj.Description = $("#Description").val();
-    obj.Body = editor.getHTMLCode();
+    obj.Body = CKEDITOR.instances.editor.getData();
     obj.Category = Number($("#Category").val());
+    // var data = 
+    // console.log(data);
     console.log(obj);
     $.ajax({
         type: "POST",
@@ -232,10 +234,12 @@ function UpdateLesson() {
     var obj = new Object();
     obj.Id = $("#Id").val();
     obj.Url = $("#Url").val();
+    obj.Order = $("#Order").val();
     obj.DateCreated = new Date($("#DateCreated").val());
     obj.DateModified = new Date($("#DateModified").val());
     obj.Title = $("#Title").val();
-    obj.Body = editor.getHTMLCode();
+    obj.Status = Number($("#Status").val());
+    obj.Body = CKEDITOR.instances.editor.getData();
     console.log(obj);
     $.ajax({
         type: "POST",
@@ -297,12 +301,12 @@ function RemoveCourse(id, e) {
 
 
 
-function EditLesson(id,e) {
+function EditLesson(id, e) {
     e.preventDefault();
     window.location.href = `/cp/lesson/Index?id=${id}`;
 }
 
-function EditCourse(id,e) {
+function EditCourse(id, e) {
     e.preventDefault();
     window.location.href = `/cp/course/Index?id=${id}`;
 

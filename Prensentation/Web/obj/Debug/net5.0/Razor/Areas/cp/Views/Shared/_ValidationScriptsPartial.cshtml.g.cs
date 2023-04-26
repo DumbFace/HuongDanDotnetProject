@@ -13,42 +13,35 @@ namespace AspNetCore
     using Microsoft.AspNetCore.Mvc.Rendering;
     using Microsoft.AspNetCore.Mvc.ViewFeatures;
 #nullable restore
-#line 2 "D:\WorkSpace\repo\Github\HuongDanDotnetProject\HuongDanDotnetProject\Prensentation\Web\Areas\cp\Views\_ViewImports.cshtml"
-using CMS.Core.Domain;
+#line 1 "D:\WorkSpace\repo\Github\HuongDanDotnetProject\HuongDanDotnetProject\Prensentation\Web\Areas\cp\Views\_ViewImports.cshtml"
+using Web.Models;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 3 "D:\WorkSpace\repo\Github\HuongDanDotnetProject\HuongDanDotnetProject\Prensentation\Web\Areas\cp\Views\_ViewImports.cshtml"
+#line 2 "D:\WorkSpace\repo\Github\HuongDanDotnetProject\HuongDanDotnetProject\Prensentation\Web\Areas\cp\Views\_ViewImports.cshtml"
 using CMS.Core.Domain.Topics;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 4 "D:\WorkSpace\repo\Github\HuongDanDotnetProject\HuongDanDotnetProject\Prensentation\Web\Areas\cp\Views\_ViewImports.cshtml"
+#line 3 "D:\WorkSpace\repo\Github\HuongDanDotnetProject\HuongDanDotnetProject\Prensentation\Web\Areas\cp\Views\_ViewImports.cshtml"
 using CMS.Core.Domain.Courses;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 5 "D:\WorkSpace\repo\Github\HuongDanDotnetProject\HuongDanDotnetProject\Prensentation\Web\Areas\cp\Views\_ViewImports.cshtml"
+#line 4 "D:\WorkSpace\repo\Github\HuongDanDotnetProject\HuongDanDotnetProject\Prensentation\Web\Areas\cp\Views\_ViewImports.cshtml"
 using CMS.Core.Domain.Lessons;
 
 #line default
 #line hidden
 #nullable disable
-#nullable restore
-#line 7 "D:\WorkSpace\repo\Github\HuongDanDotnetProject\HuongDanDotnetProject\Prensentation\Web\Areas\cp\Views\_ViewImports.cshtml"
-using Web.Models;
-
-#line default
-#line hidden
-#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"4b5e5ef4ebf7354cc35c7dacddd6bc3068f19a47", @"/Areas/cp/Views/Shared/_ValidationScriptsPartial.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"dcb80669e177a5b0f49726d4769cc7d0824f1583", @"/Areas/cp/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"1568c7da2d3ecc61d103592aba3b11680cba5e6e", @"/Areas/cp/Views/_ViewImports.cshtml")]
     #nullable restore
     public class Areas_cp_Views_Shared__ValidationScriptsPartial : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     #nullable disable
@@ -79,7 +72,7 @@ using Web.Models;
         #pragma warning disable 1998
         public async override global::System.Threading.Tasks.Task ExecuteAsync()
         {
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4b5e5ef4ebf7354cc35c7dacddd6bc3068f19a474875", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4b5e5ef4ebf7354cc35c7dacddd6bc3068f19a474649", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -93,7 +86,7 @@ using Web.Models;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4b5e5ef4ebf7354cc35c7dacddd6bc3068f19a475914", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4b5e5ef4ebf7354cc35c7dacddd6bc3068f19a475688", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
