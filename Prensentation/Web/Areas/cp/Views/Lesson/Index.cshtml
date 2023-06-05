@@ -37,6 +37,7 @@
 
 @section scripts{
     <script>
-        var editor = new RichTextEditor("#editor");
+        CKEDITOR.config.extraPlugins = 'codesnippet';
+        CKEDITOR.replace('editor');    
     </script>
 }

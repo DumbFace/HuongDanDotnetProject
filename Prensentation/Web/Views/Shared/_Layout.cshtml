@@ -6,6 +6,7 @@
     string Description = ViewBag.Description != null ? ViewBag.Description : "Hướng Dẫn Lập Trinh Net";
     string Url = ViewBag.Url != null ? ViewBag.Url : "https://huongdanlaptrinhnet.vn";
 }
+
 <head>
     <link rel="icon" href="/favicon.ico" type="image/icon type">
     <meta charset="utf-8" />
@@ -13,8 +14,7 @@
     <title>
         @Html.Raw(Title)
     </title>
-    <meta name="description"
-        content="@Html.Raw(Description)">
+    <meta name="description" content="@Html.Raw(Description)">
     <meta name="google-site-verification" content="n7-Sc3A7Znnok_1AAeUhdBhjcStPTVQ07kGtv9v-mvE" />
     <meta name="google-site-verification" content="2yLc0cvYrHTy2eHVWlNzLQew7Bcg5TfZ8gkMReAH-4A" />
     <link rel="canonical" href="https://huongdanlaptrinhnet.vn/" />
@@ -27,6 +27,7 @@
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="628" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/ckeditor.css">
     <link rel="stylesheet" href="/css/style.css">
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-R51RZ8YNQH"></script>
@@ -38,64 +39,64 @@
         gtag('config', 'G-R51RZ8YNQH');
     </script>
 
-     @if (ViewBag.Reading != 1)
+    @if (ViewBag.Reading != 1)
     {
-    <script type="application/ld+json">
-        {
-        "@@context": "https://schema.org",
-        "@@type"   : "Organization",
-        "name"     :"Hướng Dẫn Lập Trình NET",
-        "url"      : "https://huongdanlaptrinhnet.vn/",
-        "logo"     : "https://huongdanlaptrinhnet.vn/images/logo.png",
-        "contactPoint": [
-        {
-        "@@type": "ContactPoint",
-        "contactType": "customer service"
-        }
-        ],
-        @* "sameAs"    :["https://www.youtube.com/channel/UCe8MWpXzk5HSEESV7A3dqHQ","https://www.dailymotion.com/tinsaohan","https://tinsaohan.business.site","https://www.pinterest.com/tinsaohan","https://www.flickr.com/photos/193222716@N08","https://www.reddit.com/user/tinsaohan","https://tinsaohan.tumblr.com","https://twitter.com/tinsaohan","https://www.linkedin.com/in/tin-saohan-a781b8214/"], *@
-        "foundingDate"  :"2023",
-        "address" : [
-        {
-        "@@type"    :"PostalAddress",
-        "addressLocality":"Hồ Chí Minh City",
-        "addressCountry": "Việt Nam",
-        "postalCode":"72209",
-        "email":"huongdandotnet@gmail.com"
-        }
-        ]
-        }
-    </script>
+        <script type="application/ld+json">
+            {
+            "@@context": "https://schema.org",
+            "@@type"   : "Organization",
+            "name"     :"Hướng Dẫn Lập Trình NET",
+            "url"      : "https://huongdanlaptrinhnet.vn/",
+            "logo"     : "https://huongdanlaptrinhnet.vn/images/logo.png",
+            "contactPoint": [
+            {
+            "@@type": "ContactPoint",
+            "contactType": "customer service"
+            }
+            ],
+            @* "sameAs"    :["https://www.youtube.com/channel/UCe8MWpXzk5HSEESV7A3dqHQ","https://www.dailymotion.com/tinsaohan","https://tinsaohan.business.site","https://www.pinterest.com/tinsaohan","https://www.flickr.com/photos/193222716@N08","https://www.reddit.com/user/tinsaohan","https://tinsaohan.tumblr.com","https://twitter.com/tinsaohan","https://www.linkedin.com/in/tin-saohan-a781b8214/"], *@
+            "foundingDate"  :"2023",
+            "address" : [
+            {
+            "@@type"    :"PostalAddress",
+            "addressLocality":"Hồ Chí Minh City",
+            "addressCountry": "Việt Nam",
+            "postalCode":"72209",
+            "email":"huongdandotnet@gmail.com"
+            }
+            ]
+            }
+        </script>
     }
     else
     {
-    <script type="application/ld+json">
-    {
-    "@@context": "https://schema.org",
-    "@@type": "Article",
-    "mainEntityOfPage":    [    {    "@@type":"WebPage",    "@@id":"@ViewBag.FriendlyUrl"    }    ],
-    "description": "@Html.Raw(ViewBag.Description)",
-    "headline": "@Html.Raw(ViewBag.Title)",
-    "datePublished": "@ViewBag.DatePublish",
-    "dateModified": "@ViewBag.DateModified",
-    @* "author": {
+        <script type="application/ld+json">
+        {
+        "@@context": "https://schema.org",
+        "@@type": "Article",
+        "mainEntityOfPage":    [    {    "@@type":"WebPage",    "@@id":"@ViewBag.FriendlyUrl"    }    ],
+        "description": "@Html.Raw(ViewBag.Description)",
+        "headline": "@Html.Raw(ViewBag.Title)",
+        "datePublished": "@ViewBag.DatePublish",
+        "dateModified": "@ViewBag.DateModified",
+            @* "author": {
         "@@type": "Person",
         "name": "phamminhhieu"
     }, *@
-    "publisher": {
-    "@@type": "Organization",
-    "name": "Blog Thủ Thuật | Chia sẽ các thủ thuật về công nghệ",
-    "logo": {
-        "@@type": "ImageObject",
-        "url": "https://phamphuongkhang.xyz/images/logo.png"
-    }
-    },
-    "image": {
-        "@@type": "ImageObject",
-        "url": "@ViewBag.Thumb"
+        "publisher": {
+        "@@type": "Organization",
+        "name": "Blog Thủ Thuật | Chia sẽ các thủ thuật về công nghệ",
+        "logo": {
+            "@@type": "ImageObject",
+            "url": "https://phamphuongkhang.xyz/images/logo.png"
         }
-    }
-</script>
+        },
+        "image": {
+            "@@type": "ImageObject",
+            "url": "@ViewBag.Thumb"
+            }
+        }
+    </script>
     }
 </head>
 

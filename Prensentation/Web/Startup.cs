@@ -16,6 +16,9 @@ using Web.Factory;
 using CMS.Service.TopicSerivces;
 using CMS.Service.CourseServices;
 using CMS.Service.LessonServices;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity;
 
 namespace Web
 {
@@ -32,6 +35,19 @@ namespace Web
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            var connectionString = Configuration.GetConnectionString("DefaultConnectString") ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
+            services.AddDbContext<HuongDanNetDB>(options =>
+                   options.UseSqlServer(Configuration.GetConnectionString("DefaultConnectString")));
+
+            services.AddDbContext<ApplicationDbContext>(options =>
+                    options.UseSqlServer(Configuration.GetConnectionString("DefaultConnectString")));
+
+            services.AddDefaultIdentity<IdentityUser>(options => {
+
+            })
+            .AddRoles<IdentityRole>()
+            .AddEntityFrameworkStores<ApplicationDbContext>();
+
             services.AddControllersWithViews();
             services.AddControllersWithViews().AddRazorRuntimeCompilation();
             services.AddSingleton<IConfiguration>(Configuration);
@@ -50,6 +66,17 @@ namespace Web
             Constrants.AuthenticationConnection = Configuration.GetConnectionString("AuthenticationConnection");
             Constrants.DefaultConnectString = Configuration.GetConnectionString("DefaultConnectString");
             Constrants.UrlHost = Configuration.GetValue<string>("Url:UrlHost");
+
+
+            services.AddSession();
+
+            services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie(options =>
+            {
+                options.ExpireTimeSpan = TimeSpan.FromMinutes(1);
+                options.SlidingExpiration = true;
+                options.AccessDeniedPath = "/Forbidden";
+            });
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -67,10 +94,12 @@ namespace Web
             }
             app.UseHttpsRedirection();
             app.UseStaticFiles();
-
+            app.UseSession();
             app.UseRouting();
-
+            app.UseAuthentication();
             app.UseAuthorization();
+
+            // app.UseCookiePolicy(cookiePolicyOptions);
 
             app.UseEndpoints(endpoints =>
             {

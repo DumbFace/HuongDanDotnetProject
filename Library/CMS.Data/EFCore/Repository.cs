@@ -18,7 +18,10 @@ namespace CMS.Data.EFCore
 
         public Repository()
         {
-            this._context = new HuongDanNetDB();
+            var optionsBuilder = new DbContextOptionsBuilder<HuongDanNetDB>();
+            optionsBuilder.UseSqlServer("Server=.\\SQLEXPRESSKHANG;Database=HuongDanNet;Trusted_Connection=True;");
+
+            this._context = new HuongDanNetDB(optionsBuilder.Options);
             table = _context.Set<T>();
         }
         public Repository(HuongDanNetDB _context)

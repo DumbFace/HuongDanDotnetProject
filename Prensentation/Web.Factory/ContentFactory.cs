@@ -53,7 +53,7 @@ namespace Web.Factory
         {
             var predicate = PredicateBuilder.New<Topic>(true);
             if (categoryTopic != null)
-            {
+            { 
                 predicate = predicate.And(p => p.Category == categoryTopic);
             }
             return _repoTopic.GetAllFilter(predicate, projectionTopic).FirstOrDefault();
