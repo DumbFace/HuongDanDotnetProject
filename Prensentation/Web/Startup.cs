@@ -36,18 +36,27 @@ namespace Web
         public void ConfigureServices(IServiceCollection services)
         {
             var connectionString = Configuration.GetConnectionString("DefaultConnectString") ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
+
             services.AddDbContext<HuongDanNetDB>(options =>
                    options.UseSqlServer(Configuration.GetConnectionString("DefaultConnectString")));
 
             services.AddDbContext<ApplicationDbContext>(options =>
                     options.UseSqlServer(Configuration.GetConnectionString("DefaultConnectString")));
 
-            services.AddDefaultIdentity<IdentityUser>(options => {
-
+            services.AddDefaultIdentity<IdentityUser>(options =>
+            {
+                // options.SignIn.RequireConfirmedAccount = true;
+                options.Password.RequireLowercase = false;
+                options.Password.RequireNonAlphanumeric = false;
+                options.Password.RequireUppercase = false;
             })
             .AddRoles<IdentityRole>()
             .AddEntityFrameworkStores<ApplicationDbContext>();
 
+
+            services.ConfigureApplicationCookie(options =>{
+                options.ExpireTimeSpan = TimeSpan.FromMinutes(1);
+            });
             services.AddControllersWithViews();
             services.AddControllersWithViews().AddRazorRuntimeCompilation();
             services.AddSingleton<IConfiguration>(Configuration);
@@ -58,6 +67,7 @@ namespace Web
             services.AddScoped<ICourseService, CourseService>();
             services.AddScoped<ILessonService, LessonService>();
 
+
             services.AddScoped<IContentFactory, ContentFactory>();
             services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
 
@@ -67,15 +77,9 @@ namespace Web
             Constrants.DefaultConnectString = Configuration.GetConnectionString("DefaultConnectString");
             Constrants.UrlHost = Configuration.GetValue<string>("Url:UrlHost");
 
-
+            services.AddRazorPages();
             services.AddSession();
 
-            services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie(options =>
-            {
-                options.ExpireTimeSpan = TimeSpan.FromMinutes(1);
-                options.SlidingExpiration = true;
-                options.AccessDeniedPath = "/Forbidden";
-            });
 
         }
 
@@ -103,11 +107,12 @@ namespace Web
 
             app.UseEndpoints(endpoints =>
             {
+                endpoints.MapRazorPages();
 
                 endpoints.MapAreaControllerRoute(
                     name: "cp",
                     areaName: "cp",
-                    pattern: "cp/{controller=Home}/{action=Index}/{id?}");
+                    pattern: "cp/{controller=Home}/{action=Index}/{id?}").RequireAuthorization();
 
                 endpoints.MapControllerRoute(
                     name: "default",

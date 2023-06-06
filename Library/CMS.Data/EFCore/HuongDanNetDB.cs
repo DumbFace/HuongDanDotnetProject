@@ -25,11 +25,12 @@ namespace CMS.Data.EFCore
         // {
         //     optionsBuilder.UseSqlServer("Server=.\\SQLEXPRESSKHANG;Database=HuongDanNet;Trusted_Connection=True;");
         // }
-        // protected override void OnModelCreating(ModelBuilder modelBuilder)
-        // {
-        //     modelBuilder.Entity<Topic>().Navigation(e => e.Courses).AutoInclude();
-        //     modelBuilder.Entity<Course>().Navigation(e => e.Lessons).AutoInclude();
-        // }
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Topic>().Navigation(e => e.Courses).AutoInclude();
+            modelBuilder.Entity<Course>().Navigation(e => e.Lessons).AutoInclude();
+        }
+        
         public DbSet<Topic> Topic { get; set; }
         public DbSet<Course> Courses { get; set; }
         public DbSet<Lesson> Lessons { get; set; }

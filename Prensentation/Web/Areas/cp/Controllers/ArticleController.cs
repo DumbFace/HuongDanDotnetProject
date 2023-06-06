@@ -5,12 +5,14 @@ using System.Linq;
 using System.Threading.Tasks;
 using CMS.Core.Domain;
 using CMS.Service.ArticleService;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Web;
 
 namespace Web.Areas.cp.Controllers
 {
+    [Authorize]
     [Area("cp")]
     // [Route("[controller]")]
     public class ArticleController : Controller

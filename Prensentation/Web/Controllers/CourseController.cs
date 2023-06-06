@@ -8,6 +8,7 @@ using CMS.Core.Domain.Topics;
 using CMS.Service.CourseServices;
 using CMS.Service.LessonServices;
 using CMS.Service.TopicSerivces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Web.Factory;

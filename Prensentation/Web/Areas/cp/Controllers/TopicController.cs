@@ -5,11 +5,13 @@ using System.Linq;
 using System.Threading.Tasks;
 using CMS.Core.Domain.Topics;
 using CMS.Service.TopicSerivces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
 namespace Web.Areas.cp.Controllers
 {
+    [Authorize]
     [Area("cp")]
     public class TopicController : Controller
     {
