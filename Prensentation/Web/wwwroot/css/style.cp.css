@@ -11951,3 +11951,7 @@ table.table i {
     font-size: 25px;
     margin-right: 15px;
 }
+
+.nav-link-logout {
+    padding-left: 0;
+}

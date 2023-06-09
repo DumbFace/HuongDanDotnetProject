@@ -50,7 +50,7 @@ namespace CMS.Data.EFCore
         public ApplicationDbContext CreateDbContext(string[] args)
         {
             var optionsBuilder = new DbContextOptionsBuilder<ApplicationDbContext>();
-            optionsBuilder.UseSqlServer("Server=.\\SQLEXPRESSKHANG;Database=HuongDanNet;Trusted_Connection=True;");
+            optionsBuilder.UseSqlServer("Server=.\\VINAAI;Database=HuongDanNet;Trusted_Connection=True;");
 
             return new ApplicationDbContext(optionsBuilder.Options);
         }

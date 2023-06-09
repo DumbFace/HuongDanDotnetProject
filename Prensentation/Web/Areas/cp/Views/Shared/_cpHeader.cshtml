@@ -1,3 +1,7 @@
+@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+
 @{
     var lstCategory = Enum.GetValues(typeof(CategoryTopic)).Cast<CategoryTopic>().ToList();
 }
@@ -10,9 +14,9 @@
                 <ul class="list-unstyled collapse show" id="homeSubmenu" style="">
                     @foreach (var item in lstCategory)
                     {
-                    <li>
-                        <a href="/cp/topic?whichTopic=@item">@item</a>
-                    </li>
+                        <li>
+                            <a href="/cp/topic?whichTopic=@item">@item</a>
+                        </li>
                     }
                 </ul>
             </li>
@@ -22,11 +26,20 @@
             <li>
                 <a href="/cp/sitemap">Create Sitemap</a>
             </li>
+            <li>
+                <a class="nav-link" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Hello
+                    @User.Identity.Name!</a>
+            </li>
+            <li>
+                <form asp-area="Identity" asp-page="/Account/Logout"
+                    asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
+                    <button type="submit" class="nav-link btn btn-link nav-link-logout">Logout</button>
+                </form>
+            </li>
         </ul>
         <div class="footer">
             <p>
                 Copyright © @DateTime.Now.Year All rights reserved
-
             </p>
         </div>
     </div>
