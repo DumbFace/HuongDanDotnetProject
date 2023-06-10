@@ -23,6 +23,10 @@ namespace Web.Areas.Identity.Pages.Account
 
         [TempData]
         public string StatusMessage { get; set; }
+        [TempData]
+        public bool IsSuccess { get; set; }
+        [TempData]
+        public string BackUrl { get; set; }
 
         public async Task<IActionResult> OnGetAsync(string userId, string code)
         {
@@ -40,6 +44,7 @@ namespace Web.Areas.Identity.Pages.Account
             code = Encoding.UTF8.GetString(WebEncoders.Base64UrlDecode(code));
             var result = await _userManager.ConfirmEmailAsync(user, code);
             StatusMessage = result.Succeeded ? "Thank you for confirming your email." : "Error confirming your email.";
+            IsSuccess = result.Succeeded;
             return Page();
         }
     }

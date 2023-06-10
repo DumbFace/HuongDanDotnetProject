@@ -19,7 +19,8 @@ using CMS.Service.LessonServices;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity;
-
+using CMS.Core.Domain.Email;
+using CMS.Service.EmailServices;
 namespace Web
 {
     public class Startup
@@ -46,6 +47,7 @@ namespace Web
             services.AddDefaultIdentity<IdentityUser>(options =>
             {
                 // options.SignIn.RequireConfirmedAccount = true;
+                options.SignIn.RequireConfirmedAccount = true;
                 options.Password.RequireLowercase = false;
                 options.Password.RequireNonAlphanumeric = false;
                 options.Password.RequireUppercase = false;
@@ -54,20 +56,28 @@ namespace Web
             .AddEntityFrameworkStores<ApplicationDbContext>();
 
 
-            services.ConfigureApplicationCookie(options =>{
-                options.ExpireTimeSpan = TimeSpan.FromMinutes(1);
+            services.ConfigureApplicationCookie(options =>
+            {
+                options.ExpireTimeSpan = TimeSpan.FromMinutes(30);
             });
+
             services.AddControllersWithViews();
             services.AddControllersWithViews().AddRazorRuntimeCompilation();
+
+            EmailConfiguration emailConfiguration = new EmailConfiguration();
+            Configuration.GetSection("EmailConfiguration").Bind(emailConfiguration);
+
+            // services.AddSingleton(emailConfiguration);
+
             services.AddSingleton<IConfiguration>(Configuration);
+            services.AddScoped<IEmailService, EmailService>();
+
             services.AddScoped<ICategoryService, CategoryService>();
             services.AddScoped<IArticleService, ArticleSerivce>();
             services.AddScoped<IContentFactory, ContentFactory>();
             services.AddScoped<ITopicService, TopicSerivce>();
             services.AddScoped<ICourseService, CourseService>();
             services.AddScoped<ILessonService, LessonService>();
-
-
             services.AddScoped<IContentFactory, ContentFactory>();
             services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
 
