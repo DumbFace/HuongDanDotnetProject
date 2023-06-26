@@ -10,15 +10,15 @@
     <div class="p-4 pt-5">
         <ul class="list-unstyled components mb-5">
             <li class="active">
-                <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="true" class="dropdown-toggle">Article</a>
-                <ul class="list-unstyled collapse show" id="homeSubmenu" style="">
-                    @foreach (var item in lstCategory)
-                    {
-                        <li>
-                            <a href="/cp/topic?whichTopic=@item">@item</a>
-                        </li>
-                    }
-                </ul>
+                <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="true" class="dropdown-toggle">Topic</a>
+                @* <ul class="list-unstyled collapse show" id="homeSubmenu" style="">
+                @foreach (var item in lstCategory)
+                {
+                <li>
+                <a href="/cp/topic?whichTopic=@item">@item</a>
+                </li>
+                }
+                </ul> *@
             </li>
             <li>
                 <a href="/cp/category">Category</a>
@@ -26,10 +26,17 @@
             <li>
                 <a href="/cp/sitemap">Create Sitemap</a>
             </li>
+
+            <li>
+                <a class="nav-link" asp-area="cp" asp-controller="role" action="index" title="Manage"> 
+                    Role
+                </a>
+            </li>
             <li>
                 <a class="nav-link" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Hello
                     @User.Identity.Name!</a>
             </li>
+
             <li>
                 <form asp-area="Identity" asp-page="/Account/Logout"
                     asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">

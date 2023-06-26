@@ -1,0 +1,13 @@
+@model RoleModel
+
+<form asp-area="cp" asp-controller="Role" asp-action='@(string.IsNullOrWhiteSpace(Model?.Name) ? "Create" : "Update")' method="post">
+    <input type="hidden" asp-for="@Model.Id">
+    <h2>Thêm nhóm quyền</h2>
+    <hr />
+    <div asp-validation-summary="ModelOnly" class="text-danger" role="alert"></div>
+    <div class="form-floating mb-3">
+        <input asp-for="@Model.Name" class="form-control" autocomplete="username" aria-required="true" />
+        <label asp-for="@Model.Name">Nhóm Quyền</label>
+        <span asp-validation-for="@Model.Name" class="text-danger"></span>
+    </div>
+</form>

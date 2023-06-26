@@ -54,9 +54,12 @@ namespace Web
             .AddEntityFrameworkStores<ApplicationDbContext>();
 
 
-            services.ConfigureApplicationCookie(options =>{
-                options.ExpireTimeSpan = TimeSpan.FromMinutes(1);
+            services.ConfigureApplicationCookie(options =>
+            {
+                options.ExpireTimeSpan = TimeSpan.FromHours(1);
             });
+
+            services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
             services.AddControllersWithViews();
             services.AddControllersWithViews().AddRazorRuntimeCompilation();
             services.AddSingleton<IConfiguration>(Configuration);
@@ -105,14 +108,28 @@ namespace Web
 
             // app.UseCookiePolicy(cookiePolicyOptions);
 
+            // app.UseMvc(routes =>
+            // {
+            //     routes.MapRoute(
+            //         name: "AreaDotNetTutorialRoute",
+            //         template: "{area:exists}/{controller=Home}/{action=Index}"
+            //     );
+            // });
+
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapRazorPages();
+                endpoints.MapAreaControllerRoute(
+                                      name: "AreaDotNetTutorialRoute",
+                                      areaName: "cp",
+                                       pattern: "{area:exists}/{controller=Home}/{action=Index}"
+                              );
 
                 endpoints.MapAreaControllerRoute(
                     name: "cp",
                     areaName: "cp",
                     pattern: "cp/{controller=Home}/{action=Index}/{id?}").RequireAuthorization();
+
+                endpoints.MapRazorPages();
 
                 endpoints.MapControllerRoute(
                     name: "default",
