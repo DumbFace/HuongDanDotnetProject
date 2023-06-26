@@ -11,6 +11,9 @@ using CMS.Service.CourseServices;
 using CMS.Service.LessonServices;
 using CMS.Service.TopicSerivces;
 using Xunit;
+using CMS.Util.PermissionUtils;
+using Domain.Permissions;
+using Domain.Roles;
 
 namespace UnitTest
 {
@@ -147,6 +150,22 @@ namespace UnitTest
         public void TestReadRow()
         {
             var topic = _topicService.GetTable.Include(s => s.Courses);
-        } 
+        }
+
+        [Fact]
+        public void Test_GeneratePermissionViewModel_Success()
+        {
+            List<PermissionViewModel> lstPermissionModel = PermissionUtil.GeneratePermissionViewModel();
+            foreach (var item in lstPermissionModel)
+            {
+                Console.WriteLine($"Group {item.GroupPermission}");
+                foreach (var role in item.RoleClaims)
+                {
+                    Console.WriteLine($"Claim Name {role.Name}");
+                    Console.WriteLine($"Claim Value {role.Value}");
+                }
+            }
+
+        }
     }
 }

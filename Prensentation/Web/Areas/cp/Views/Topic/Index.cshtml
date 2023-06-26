@@ -4,74 +4,86 @@
 @{
     int Category = (int)@Model.Category;
 }
-<form>
-    <input type="hidden" id="Category" name="Category" value="@Category">
-    <input type="hidden" id="DateCreated" name="DateCreated" value="@Model.DateCreated">
-    <input type="hidden" id="DateModified" name="DateModified" value="@Model.DateModified">
-    <input type="hidden" id="Id" name="Id" value="@Model.Id">
-    <div class="form-group">
-        <label for="Title">Tiêu đề</label>
-        <input type="text" class="form-control" id="Title" name="Title" placeholder="Nhập tiêu đề" value="@Model.Title">
-    </div>
-    <div class="form-group">
-        <label for="Url">Nhập Url</label>
-        <input type="text" class="form-control" id="Url" name="Url" placeholder="Nhập Url" value="@Model.Url">
-    </div>
-    <div class="form-group">
-        <label for="Url">Nhập Mô tả</label>
-        <input type="text" class="form-control" id="Description" name="Description" placeholder="Nhập Mô Tả"
-            value="@Model.Url">
-    </div>
-    <div class="form-group">
-        <div class="row">
-            <div class="col-sm-12">
-                <div class="document-editor__toolbar"></div>
-                <div id="editor">
-                    @Html.Raw(Model.Body)
-                </div>
-            </div>
-        </div>
-    </div>
-    <button type="button" onclick="UpdateTopic()" class="btn btn-primary">Lưu</button>
+Test Topic
 
-    <div class="form-group">
-        <div class="row row-course">
-            <h3>Course</h3>
-            <button class="btn btn-success" onclick="AddCourse(event)">ADD</button>
-        </div>
-    </div>
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Title</th>
-                <th></th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var item in Model.Courses)
-            {
-                <tr>
-                    <td scope="row">@item.Title</td>
-                    <td>
-                        <a href="" onclick="EditCourse(@item.Id,event)">
-                            <i class="fa fa-edit"></i>
-                        </a>
-                        <a href="" onclick="RemoveCourse(@item.Id,event)">
-                            <i class="fa fa-close"></i>
-                        </a>
-                    </td>
-                </tr>
-            }
-        </tbody>
-    </table>
+@if (AuthorizationService.AuthorizeAsync(User, PermissionsAuthorize.Product.Create).Result.Succeeded)
+{
+    <button class="btn btn-success">Create</button>
+}
+
+@if (AuthorizationService.AuthorizeAsync(User, PermissionsAuthorize.Product.Edit).Result.Succeeded)
+{
+    <button class="btn btn-success">Edit</button>
+}
+
+@* <form>
+<input type="hidden" id="Category" name="Category" value="@Category">
+<input type="hidden" id="DateCreated" name="DateCreated" value="@Model.DateCreated">
+<input type="hidden" id="DateModified" name="DateModified" value="@Model.DateModified">
+<input type="hidden" id="Id" name="Id" value="@Model.Id">
+<div class="form-group">
+<label for="Title">Tiêu đề</label>
+<input type="text" class="form-control" id="Title" name="Title" placeholder="Nhập tiêu đề" value="@Model.Title">
+</div>
+<div class="form-group">
+<label for="Url">Nhập Url</label>
+<input type="text" class="form-control" id="Url" name="Url" placeholder="Nhập Url" value="@Model.Url">
+</div>
+<div class="form-group">
+<label for="Url">Nhập Mô tả</label>
+<input type="text" class="form-control" id="Description" name="Description" placeholder="Nhập Mô Tả"
+value="@Model.Url">
+</div>
+<div class="form-group">
+<div class="row">
+<div class="col-sm-12">
+<div class="document-editor__toolbar"></div>
+<div id="editor">
+@Html.Raw(Model.Body)
+</div>
+</div>
+</div>
+</div>
+<button type="button" onclick="UpdateTopic()" class="btn btn-primary">Lưu</button>
+
+<div class="form-group">
+<div class="row row-course">
+<h3>Course</h3>
+<button class="btn btn-success" onclick="AddCourse(event)">ADD</button>
+</div>
+</div>
+<table class="table">
+<thead>
+<tr>
+<th>Title</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+@foreach (var item in Model.Courses)
+{
+<tr>
+<td scope="row">@item.Title</td>
+<td>
+<a href="" onclick="EditCourse(@item.Id,event)">
+<i class="fa fa-edit"></i>
+</a>
+<a href="" onclick="RemoveCourse(@item.Id,event)">
+<i class="fa fa-close"></i>
+</a>
+</td>
+</tr>
+}
+</tbody>
+</table>
 </form>
 
 
 @await Html.PartialAsync("_modal")
 
 @section scripts{
-    <script>
-        CKEDITOR.config.extraPlugins = 'codesnippet';
-        CKEDITOR.replace('editor');    
-    </script>
-}
+<script>
+CKEDITOR.config.extraPlugins = 'codesnippet';
+CKEDITOR.replace('editor');
+</script>
+} *@

@@ -21,6 +21,9 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity;
 using CMS.Core.Domain.Email;
 using CMS.Service.EmailServices;
+using Microsoft.AspNetCore.Authorization;
+using PracticeIdentity.AuthorizeHandlers;
+
 namespace Web
 {
     public class Startup
@@ -61,9 +64,11 @@ namespace Web
                 options.ExpireTimeSpan = TimeSpan.FromHours(1);
             });
 
-            
+            services.AddSingleton<IAuthorizationPolicyProvider, PermissionPolicyProvider>();
+            services.AddScoped<IAuthorizationHandler, PermissionAuthorizationHandler>();
+
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
-            
+
             services.AddControllersWithViews();
             services.AddControllersWithViews().AddRazorRuntimeCompilation();
 
@@ -128,11 +133,11 @@ namespace Web
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapAreaControllerRoute(
-                                      name: "AreaDotNetTutorialRoute",
-                                      areaName: "cp",
-                                       pattern: "{area:exists}/{controller=Home}/{action=Index}"
-                              );
+                // endpoints.MapAreaControllerRoute(
+                //                       name: "AreaDotNetTutorialRoute",
+                //                       areaName: "cp",
+                //                        pattern: "{area:exists}/{controller=Home}/{action=Index}"
+                //               );
 
                 endpoints.MapAreaControllerRoute(
                     name: "cp",

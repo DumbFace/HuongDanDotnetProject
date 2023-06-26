@@ -27,6 +27,7 @@
     <ProjectReference Include="..\Library\CMS.Core\CMS.Core.csproj" />
     <ProjectReference Include="..\Library\CMS.Service\CMS.Service.csproj" />
     <ProjectReference Include="..\Prensentation\Web.Factory\Web.Factory.csproj" />
+    <ProjectReference Include="..\Library\CMS.Util\CMS.Util.csproj" />
   </ItemGroup>
 
 </Project>

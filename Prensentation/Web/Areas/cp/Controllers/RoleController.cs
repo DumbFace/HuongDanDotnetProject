@@ -114,20 +114,25 @@ namespace Web.Areas.cp.Controllers
             IdentityRole role = await _roleManager.FindByNameAsync(name);
 
             var roleClaims = await _roleManager.GetClaimsAsync(role);
-            List<string> claimsAsString = new List<string>();
 
-            foreach (Claim claim in roleClaims)
+            var lstPermissionDynamic = PermissionUtil.GeneratePermissionViewModel();
+            foreach (PermissionViewModel permissionViewModel in lstPermissionDynamic)
             {
-                claimsAsString.Add(claim.Value);
+                foreach (RoleClaimsViewModel roleClaimsViewModel in permissionViewModel.RoleClaims)
+                {
+                    if (roleClaims.Any(s => s.Value == roleClaimsViewModel.Value))
+                    {
+                        roleClaimsViewModel.Selected = true;
+                    }
+                }
             }
 
-            ViewBag.lstPermission = PermissionUtil.GeneratePermissions();
-            return PartialView("ModalPermission", claimsAsString);
+            return PartialView("ModalPermission", lstPermissionDynamic);
         }
 
 
         [HttpPost]
-        public async Task<IActionResult> UpdatePermission(List<string> permissions, string name)
+        public async Task<IActionResult> UpdatePermission(List<PermissionViewModel> obj, string name)
         {
             var role = await _roleManager.FindByNameAsync(name);
             var allClaims = await _roleManager.GetClaimsAsync(role);
@@ -142,13 +147,15 @@ namespace Web.Areas.cp.Controllers
                 transaction.Commit();
             }
 
-            var allPermissions = permissions;
-            foreach (var permission in allPermissions)
+            List<string> permissions = new List<string>();
+            
+            foreach(var item in obj)
             {
-                // if (!allClaims.Any(a => a.Type == "Permission" && a.Value == permission))https://localhost:7020/Role#
-                // {
-                //     var result = await _roleManager.AddClaimAsync(role, new Claim("Permission", permission));
-                // }
+               permissions.AddRange(item.RoleClaims.Where(s=>s.Selected).Select(s=>s.Value));
+            }
+
+            foreach (string permission in permissions)
+            {
                 var result = await _roleManager.AddClaimAsync(role, new Claim("Permission", permission));
             }
 

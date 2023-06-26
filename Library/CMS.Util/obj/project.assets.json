@@ -6449,19 +6449,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Vinaai\\.nuget\\packages\\": {}
+    "C:\\Users\\khang\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Repo\\Github\\HuongDanDotnetProject\\Library\\CMS.Util\\CMS.Util.csproj",
+      "projectUniqueName": "F:\\Repo\\HuongDanDotnetProject\\Library\\CMS.Util\\CMS.Util.csproj",
       "projectName": "CMS.Util",
-      "projectPath": "D:\\Repo\\Github\\HuongDanDotnetProject\\Library\\CMS.Util\\CMS.Util.csproj",
-      "packagesPath": "C:\\Users\\Vinaai\\.nuget\\packages\\",
-      "outputPath": "D:\\Repo\\Github\\HuongDanDotnetProject\\Library\\CMS.Util\\obj\\",
+      "projectPath": "F:\\Repo\\HuongDanDotnetProject\\Library\\CMS.Util\\CMS.Util.csproj",
+      "packagesPath": "C:\\Users\\khang\\.nuget\\packages\\",
+      "outputPath": "F:\\Repo\\HuongDanDotnetProject\\Library\\CMS.Util\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Vinaai\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\khang\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -6475,8 +6475,8 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "D:\\Repo\\Github\\HuongDanDotnetProject\\Library\\CMS.Data\\CMS.Data.csproj": {
-              "projectPath": "D:\\Repo\\Github\\HuongDanDotnetProject\\Library\\CMS.Data\\CMS.Data.csproj"
+            "F:\\Repo\\HuongDanDotnetProject\\Library\\CMS.Data\\CMS.Data.csproj": {
+              "projectPath": "F:\\Repo\\HuongDanDotnetProject\\Library\\CMS.Data\\CMS.Data.csproj"
             }
           }
         }
@@ -6512,7 +6512,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.200\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.304\\RuntimeIdentifierGraph.json"
       }
     }
   }

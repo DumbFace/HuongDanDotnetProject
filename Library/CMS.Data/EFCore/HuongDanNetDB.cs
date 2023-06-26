@@ -25,12 +25,13 @@ namespace CMS.Data.EFCore
         // {
         //     optionsBuilder.UseSqlServer("Server=.\\SQLEXPRESSKHANG;Database=HuongDanNet;Trusted_Connection=True;");
         // }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Topic>().Navigation(e => e.Courses).AutoInclude();
             modelBuilder.Entity<Course>().Navigation(e => e.Lessons).AutoInclude();
         }
-        
+
         public DbSet<Topic> Topic { get; set; }
         public DbSet<Course> Courses { get; set; }
         public DbSet<Lesson> Lessons { get; set; }
@@ -50,9 +51,20 @@ namespace CMS.Data.EFCore
         public ApplicationDbContext CreateDbContext(string[] args)
         {
             var optionsBuilder = new DbContextOptionsBuilder<ApplicationDbContext>();
-            optionsBuilder.UseSqlServer("Server=.\\SQLEXPRESS02;Database=HuongDanNet;Trusted_Connection=True;");
+            optionsBuilder.UseSqlServer("Server=.\\EXPRESSKHANG;Database=HuongDanNet;Trusted_Connection=True;");
 
             return new ApplicationDbContext(optionsBuilder.Options);
+        }
+    }
+
+    public class DatabaseHuongDanNetDBContextFactory : IDesignTimeDbContextFactory<HuongDanNetDB>
+    {
+        public HuongDanNetDB CreateDbContext(string[] args)
+        {
+            var optionsBuilder = new DbContextOptionsBuilder<HuongDanNetDB>();
+            optionsBuilder.UseSqlServer("Server=.\\EXPRESSKHANG;Database=HuongDanNet;Trusted_Connection=True;");
+
+            return new HuongDanNetDB(optionsBuilder.Options);
         }
     }
 }

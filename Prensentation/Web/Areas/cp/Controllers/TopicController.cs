@@ -5,9 +5,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using CMS.Core.Domain.Topics;
 using CMS.Service.TopicSerivces;
+using Domain.Permissions;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using PracticeIdentity.Permissions;
 
 namespace Web.Areas.cp.Controllers
 {
@@ -24,28 +26,28 @@ namespace Web.Areas.cp.Controllers
             _service = service;
             _logger = logger;
         }
-
+        [Authorize(PermissionsAuthorize.Topic.View)]
         // [Route("topic/{whichTopic}")]
-        public IActionResult Index(CategoryTopic whichTopic)
+        public IActionResult Index()
         {
-            Topic topic = null;
-            topic = _service.GetEntity(s => s.Category == whichTopic);
-            if (topic == null)
-            {
-                topic = new Topic
-                {
-                    Title = "",
-                    Category = whichTopic,
-                    Body = "",
-                    Url = "",
-                    DateCreated = DateTime.Now,
-                    DateModified = DateTime.Now
-                };
-                _service.Insert(topic);
-                _service.Save();
-            }
+            // Topic topic = null;
+            // topic = _service.GetEntity(s => s.Category == whichTopic);
+            // if (topic == null)
+            // {
+            //     topic = new Topic
+            //     {
+            //         Title = "",
+            //         Category = whichTopic,
+            //         Body = "",
+            //         Url = "",
+            //         DateCreated = DateTime.Now,
+            //         DateModified = DateTime.Now
+            //     };
+            //     _service.Insert(topic);
+            //     _service.Save();
+            // }
 
-            return View(topic);
+            return View();
         }
 
         [HttpPost]

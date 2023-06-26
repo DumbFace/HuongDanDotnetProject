@@ -34,5 +34,15 @@ namespace PracticeIdentity.Permissions
             public const string Edit = "Permissions.User.Edit";
             public const string Delete = "Permissions.User.Delete";
         }
+
+        public static class Topic
+        {
+            public const string GroupPermission = "Topic";
+            public const string View = "Permissions.Topic.View";
+            public const string Create = "Permissions.Topic.Create";
+            public const string Edit = "Permissions.Topic.Edit";
+            public const string Delete = "Permissions.Topic.Delete";
+        }
+
     }
 }

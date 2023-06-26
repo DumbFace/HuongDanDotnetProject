@@ -10,15 +10,18 @@
     <div class="p-4 pt-5">
         <ul class="list-unstyled components mb-5">
             <li class="active">
-                <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="true" class="dropdown-toggle">Topic</a>
-                @* <ul class="list-unstyled collapse show" id="homeSubmenu" style="">
-                @foreach (var item in lstCategory)
-                {
-                <li>
-                <a href="/cp/topic?whichTopic=@item">@item</a>
-                </li>
-                }
-                </ul> *@
+                <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="true" class="dropdown-toggle">Content</a>
+                <ul class="list-unstyled collapse show" id="homeSubmenu" style="">
+                    <li>
+                        <a asp-area="cp" asp-controller="topic" asp-action="index">Topic</a>
+                    </li>
+                    <li>
+                        <a asp-area="cp" asp-controller="course" asp-action="index">Course</a>
+                    </li>
+                    <li>
+                        <a asp-area="cp" asp-controller="lesson" asp-action="index">Lesson</a>
+                    </li>
+                </ul>
             </li>
             <li>
                 <a href="/cp/category">Category</a>
@@ -28,7 +31,7 @@
             </li>
 
             <li>
-                <a class="nav-link" asp-area="cp" asp-controller="role" action="index" title="Manage"> 
+                <a class="nav-link" asp-area="cp" asp-controller="role" action="index" title="Manage">
                     Role
                 </a>
             </li>
