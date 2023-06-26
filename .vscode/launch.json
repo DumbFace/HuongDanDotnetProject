@@ -30,7 +30,7 @@
             "args": [],
             "cwd": "${workspaceFolder}/Prensentation/Web",
             "stopAtEntry": false,
-
+            "requireExactSource": false,
             "env": {
                 "ASPNETCORE_ENVIRONMENT": "Development"
             },

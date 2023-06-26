@@ -5,3 +5,34 @@
 }
 
 <h1>@ViewData["Title"]</h1>
+<partial name="_StatusMessage" model="@Model.StatusMessage" />
+
+
+<div class="d-block w-100 text-center">
+    <div class="lds-roller">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+</div>
+
+@section scripts{
+    @if (Model.IsSuccess)
+    {
+        <script>
+            $(document).ready(function () {
+                setTimeout(function () {
+                    window.location.href = "/cp";
+                }, 5000)
+            })
+        </script>
+    }
+}
+
+
+
