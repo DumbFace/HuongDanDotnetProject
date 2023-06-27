@@ -8,5 +8,7 @@ namespace PracticeIdentity.Models
     public class RoleViewModel
     {
         public string Name { get; set; }
+        public string Value { get; set; }
+        public bool Selected { get; set; } = false;
     }
 }

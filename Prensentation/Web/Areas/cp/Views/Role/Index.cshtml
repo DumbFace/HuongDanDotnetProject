@@ -9,11 +9,10 @@
 
 </table>
 
-<partial name="_modal" />
 
 @section scripts {
     <partial name="_ValidationScriptsPartial" />
-
+    <partial name="_modal" />
     <script>
         var myModal = $('#exampleModal')
         function LoadData() {
@@ -29,6 +28,7 @@
 
         function Add(e) {
             $.get("/cp/Role/GetModal", function (data) {
+                $("#headerModal").html("Add");
                 $("#loadModal").html(data);
                 $.validator.unobtrusive.parse("#exampleModal");
             });
@@ -37,6 +37,7 @@
         }
         function Edit(e, name) {
             $.get(`/cp/Role/GetModal?name=${name}`, function (data) {
+                $("#headerModal").html("Edit");
                 $("#loadModal").html(data);
                 $.validator.unobtrusive.parse("#exampleModal");
             });

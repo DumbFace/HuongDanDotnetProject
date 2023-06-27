@@ -50,7 +50,7 @@ namespace Web
             services.AddDefaultIdentity<IdentityUser>(options =>
             {
                 // options.SignIn.RequireConfirmedAccount = true;
-                options.SignIn.RequireConfirmedAccount = true;
+                options.SignIn.RequireConfirmedAccount = false;
                 options.Password.RequireLowercase = false;
                 options.Password.RequireNonAlphanumeric = false;
                 options.Password.RequireUppercase = false;

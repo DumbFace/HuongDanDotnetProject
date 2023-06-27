@@ -1,6 +1,6 @@
 @model RegisterModel
 
-<form id="registerForm" action="/User/Create" method="post">
+<form asp-area="cp" asp-controller="usermanager" asp-action="create" method="post">
     <h2>Create a new account.</h2>
     <hr />
     <div asp-validation-summary="ModelOnly" class="text-danger" role="alert"></div>
@@ -22,5 +22,4 @@
         <label asp-for="@Model.ConfirmPassword">Confirm Password</label>
         <span asp-validation-for="@Model.ConfirmPassword" class="text-danger"></span>
     </div>
-    <button id="registerSubmit" type="submit" class="w-100 btn btn-lg btn-primary">Register</button>
 </form>

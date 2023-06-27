@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Security.Claims;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using AutoMapper;
 using CMS.Data.EFCore;
@@ -16,6 +17,7 @@ using PracticeIdentity.Models;
 
 namespace Web.Areas.cp.Controllers
 {
+    [Area("cp")]
     public class UserManagerController : Controller
     {
         private readonly ILogger<UserManagerController> _logger;
@@ -23,14 +25,18 @@ namespace Web.Areas.cp.Controllers
         private readonly RoleManager<IdentityRole> _roleManager;
         private readonly ApplicationDbContext _context;
         private readonly IMapper _mapper;
+        //     private readonly IUserStore<IdentityUser> _userStore;
+        // private readonly IUserEmailStore<IdentityUser> _emailStore;
 
-        public UserManagerController(ILogger<UserManagerController> logger, UserManager<IdentityUser> userManager, RoleManager<IdentityRole> roleManager, ApplicationDbContext context, IMapper mapper)
+        public UserManagerController(ILogger<UserManagerController> logger, UserManager<IdentityUser> userManager, RoleManager<IdentityRole> roleManager, ApplicationDbContext context, IMapper mapper, IUserStore<IdentityUser> userStore)
         {
             _logger = logger;
             _userManager = userManager;
             _roleManager = roleManager;
             _context = context;
             _mapper = mapper;
+            // _userStore = userStore;
+            // _emailStore = emailStore;
         }
 
         public IActionResult Index()
@@ -47,16 +53,33 @@ namespace Web.Areas.cp.Controllers
         [HttpGet]
         public IActionResult GetModal()
         {
-            return PartialView("ShowModal", new RegisterModel());
+            return PartialView("RegisterModal", new RegisterModel());
         }
 
         [HttpGet]
         public async Task<IActionResult> GetModalEdit(string name)
         {
             var user = await _userManager.FindByNameAsync(name);
+
             var userViewModel = _mapper.Map<UserViewModel>(user);
-            userViewModel.ListRole = (List<string>)await _userManager.GetRolesAsync(user);
-            ViewBag.lstRoles = _roleManager.Roles.ToList();
+
+            IList<string> rolesUser = await _userManager.GetRolesAsync(user);
+            List<RoleViewModel> roleViewModels = _roleManager.Roles.Select(s => new RoleViewModel
+            {
+                Name = s.Name,
+                Value = s.Name,
+                Selected = false
+            }).ToList();
+
+            foreach (var roleViewModel in roleViewModels)
+            {
+                if (rolesUser.Any(s => s == roleViewModel.Name))
+                {
+                    roleViewModel.Selected = true;
+                }
+            }
+
+            userViewModel.Roles = roleViewModels;
             return PartialView("EditModal", userViewModel);
         }
 
@@ -66,7 +89,11 @@ namespace Web.Areas.cp.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = Activator.CreateInstance<IdentityUser>();
+                var user = new IdentityUser
+                {
+                    UserName = registerModel.Email,
+                    Email = registerModel.Email
+                };
 
                 // await _userStore.SetUserNameAsync(user, registerModel.Email, CancellationToken.None);
                 // await _emailStore.SetEmailAsync(user, registerModel.Email, CancellationToken.None);
@@ -105,27 +132,25 @@ namespace Web.Areas.cp.Controllers
                 using (var transaction = _context.Database.BeginTransaction())
                 {
                     var user = await _userManager.FindByEmailAsync(userModel.Email);
-
                     user.PhoneNumber = userModel.PhoneNumber;
                     var result = await _userManager.UpdateAsync(user);
 
-                    if (userModel?.ListRole.Count > 0)
+                    if (userModel?.Roles.Count > 0)
                     {
-                        var checkRoles = await _userManager.GetRolesAsync(user);
-                        if (checkRoles.Count > 0)
+                        var userRoles = await _userManager.GetRolesAsync(user);
+                        if (userRoles.Count > 0)
                         {
-                            await _userManager.RemoveFromRolesAsync(user, (IEnumerable<string>)checkRoles);
-                            // _userManager.UpdateAsync
+                            await _userManager.RemoveFromRolesAsync(user, (IEnumerable<string>)userRoles);
                         }
 
-                        var roleResult = await _userManager.AddToRolesAsync(user, userModel?.ListRole);
+                        var roleResult = await _userManager.AddToRolesAsync(user, userModel.Roles.Where(s => s.Selected == true).Select(s => s.Name));
                     }
                     transaction.Commit();
                 }
             }
             return RedirectToAction("Index");
         }
-        [HttpDelete]
+        [HttpGet]
         public async Task<IActionResult> Delete(string email)
         {
             var user = await _userManager.FindByEmailAsync(email);

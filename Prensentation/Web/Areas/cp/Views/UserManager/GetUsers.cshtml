@@ -15,14 +15,14 @@
 
                     <div class="dropdown">
                         <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
-                            data-bs-toggle="dropdown" aria-expanded="false">
+                            data-toggle="dropdown" aria-expanded="false">
                             Actions
                         </a>
 
                         <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                             <li><a class="dropdown-item" href="#" onclick="Edit(event,'@user.Email')">Edit</a></li>
-                            <li><a class="dropdown-item" href="#">Delete</a></li>
-                            <li><a class="dropdown-item" href="#">Permission</a></li>
+                            <li><a class="dropdown-item" href="#" onclick="Delete(event,'@user.Email')">Delete</a></li>
+                            @* <li><a class="dropdown-item" href="#">Permission</a></li> *@
                         </ul>
                     </div>
                 </td>

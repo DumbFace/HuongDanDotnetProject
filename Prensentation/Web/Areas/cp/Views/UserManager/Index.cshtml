@@ -10,10 +10,10 @@
 
 </table>
 
-<partial name="_modal" />
 
 @section scripts {
     <partial name="_ValidationScriptsPartial" />
+    <partial name="_modal" />
 
     <script>
         var myModal = new bootstrap.Modal(document.getElementById('exampleModal'), {
@@ -21,7 +21,7 @@
         })
 
         function LoadData() {
-            $.get("/cp/User/GetUsers", function (data) {
+            $.get("/cp/UserManager/GetUsers", function (data) {
                 $("#example").html(data);
                 $('#example').DataTable();
             });
@@ -32,28 +32,35 @@
         });
 
         function Add(e) {
-            $.get("/cp/User/GetModal", function (data) {
+            $.get("/cp/UserManager/GetModal", function (data) {
+                $("#headerModal").html("Add");
                 $("#loadModal").html(data);
                 $.validator.unobtrusive.parse("#exampleModal");
             });
             myModal.show();
 
         }
-        function Edit(e,name) {
-            $.get(`/cp/User/GetModalEdit?name=${name}`, function (data) {
+        function Edit(e, name) {
+
+            $.get(`/cp/UserManager/GetModalEdit?name=${name}`, function (data) {
+                $("#headerModal").html("Edit");
                 $("#loadModal").html(data);
-                @* $.validator.unobtrusive.parse("#exampleModal"); *@
+                $.validator.unobtrusive.parse("#exampleModal");
             });
             myModal.show();
         }
 
-        function Delete(e,email) {
-             $.get(`/cp/User/Delete?email=${email}`, function (result) {
-                if (result == 'Ok')
-                {
-                    LoadData();
-                }
-            });
+        function Delete(e, email) {
+            debugger
+            let result = DoYouWantToDelete();
+            if (result) {
+                $.get(`/cp/UserManager/Delete?email=${email}`, function (result) {
+                    if (result == 'Ok') {
+                        LoadData();
+                    }
+                });
+            }
+
         }
     </script>
 }

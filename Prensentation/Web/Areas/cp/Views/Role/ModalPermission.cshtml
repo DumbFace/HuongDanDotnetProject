@@ -3,34 +3,6 @@
 <form asp-area="cp" asp-controller="Role" asp-action="UpdatePermission" method="post">
     <input type="hidden" name="Name" value="@ViewBag.role">
     <div class="accordion" id="accordionExample">
-        @* @foreach (PermissionViewModel permissionViewModel in Model)
-        {
-        <input type="hidden" asp-for="@permissionViewModel">
-        <div class="accordion-item">
-        <h2 class="accordion-header" id="headingOne">
-        <button class="accordion-button" type="button" data-toggle="collapse"
-        data-target="#@permissionViewModel.GroupPermission" aria-expanded="true"
-        aria-controls="collapseOne">
-        @permissionViewModel.GroupPermission
-        </button>
-        </h2>
-        <div id="@permissionViewModel.GroupPermission" class="accordion-collapse collapse show"
-        aria-labelledby="headingOne" data-parent="#@permissionViewModel.GroupPermission">
-        <div class="accordion-body">
-        @foreach (RoleClaimsViewModel roleClaim in permissionViewModel.RoleClaims)
-        {
-        <div class="form-check">
-        <input asp-for="@roleClaim.Name" type="hidden" />
-        <input asp-for="@roleClaim.Value" type="hidden" />
-        <input asp-for="@roleClaim.Selected" checked="@roleClaim.Selected" class="form-check-input" />
-        <label class="" for="btncheck1">@roleClaim.Name</label>
-        </div>
-
-        }
-        </div>
-        </div>
-        </div>
-        } *@
         @for (int i = 0; i < Model.Count; i++)
         {
             <input type="hidden" asp-for="@Model[i].GroupPermission">

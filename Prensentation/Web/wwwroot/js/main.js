@@ -311,3 +311,19 @@ function EditCourse(id, e) {
     window.location.href = `/cp/course/Index?id=${id}`;
 
 }
+
+function DoYouWantToDelete() {
+    Swal.fire({
+        title: 'Do you want to delete the record?',
+        showDenyButton: true,
+        showCancelButton: true,
+        confirmButtonText: 'Save',
+        denyButtonText: `Don't save`,
+    }).then((result) => {
+        if (result.isConfirmed) {
+            return true;
+        } else if (result.isDenied) {
+            return false;
+        }
+    })
+}
